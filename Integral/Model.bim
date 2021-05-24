@@ -1,0 +1,1058 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer 10.9.2.70 Integral",
+        "connectionString": "Provider=SQLNCLI11;Data Source=10.9.2.70;Initial Catalog=Integral;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "PHUHUNGLIFE\\vagy0409",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "CHANNEL_ORDER",
+        "columns": [
+          {
+            "name": "CHANNEL",
+            "dataType": "string",
+            "sourceColumn": "CHANNEL",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ORDER",
+            "dataType": "string",
+            "sourceColumn": "ORDER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ORDER_NBU",
+            "dataType": "string",
+            "sourceColumn": "ORDER_NBU",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CHANNEL_ORDER",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[CHANNEL_ORDER].* FROM [dbo].[CHANNEL_ORDER] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[CHANNEL_ORDER].* FROM [dbo].[CHANNEL_ORDER] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "CHANNEL_ORDER"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vClaim_Agent_Info",
+        "columns": [
+          {
+            "name": "Agent_Number",
+            "dataType": "string",
+            "sourceColumn": "Agent_Number",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Agent_Name",
+            "dataType": "string",
+            "sourceColumn": "Agent_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ID_Number",
+            "dataType": "string",
+            "sourceColumn": "ID_Number",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Supervisor_Code",
+            "dataType": "string",
+            "sourceColumn": "Supervisor_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Supervisor_Name",
+            "dataType": "string",
+            "sourceColumn": "Supervisor_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Parent_Supervisor_Code",
+            "dataType": "string",
+            "sourceColumn": "Parent_Supervisor_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Parent_Supervisor_Name",
+            "dataType": "string",
+            "sourceColumn": "Parent_Supervisor_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Area_Name",
+            "dataType": "string",
+            "sourceColumn": "Area_Name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Sales_Unit",
+            "dataType": "string",
+            "sourceColumn": "Sales_Unit",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sales_Unit_Code",
+            "dataType": "string",
+            "sourceColumn": "Sales_Unit_Code",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vClaim_Agent_Info",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vClaim_Agent_Info].* FROM [dbo].[vClaim_Agent_Info] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vClaim_Agent_Info].* FROM [dbo].[vClaim_Agent_Info] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vClaim_Agent_Info"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vClaim_All_Data_Core",
+        "columns": [
+          {
+            "name": "POLICY_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "POLICY_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Issured_name",
+            "dataType": "string",
+            "sourceColumn": "Issured_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "COMPONENT_CODE",
+            "dataType": "string",
+            "sourceColumn": "COMPONENT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SUM_ASSURED",
+            "dataType": "double",
+            "sourceColumn": "SUM_ASSURED",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "POLICY_STATUS",
+            "dataType": "string",
+            "sourceColumn": "POLICY_STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_NAME",
+            "dataType": "string",
+            "sourceColumn": "AGENT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AGENT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "AGENT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SALES_UNIT",
+            "dataType": "string",
+            "sourceColumn": "SALES_UNIT",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AREA_NAME",
+            "dataType": "string",
+            "sourceColumn": "AREA_NAME",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PROPOSAL_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PROPOSAL_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "RISK_COMMENCEMENT_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "RISK_COMMENCEMENT_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "PAID_TO_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PAID_TO_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CLM_SUBMIT_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CLM_SUBMIT_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CLM_OCCUR_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CLM_OCCUR_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "TOTAMNT",
+            "dataType": "double",
+            "sourceColumn": "TOTAMNT",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AUTHDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "AUTHDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CLMSTAT",
+            "dataType": "string",
+            "sourceColumn": "CLMSTAT",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "APRVDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "APRVDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vClaim_All_Data_Core",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vClaim_All_Data_Core].* FROM [dbo].[vClaim_All_Data_Core] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vClaim_All_Data_Core].* FROM [dbo].[vClaim_All_Data_Core] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vClaim_All_Data_Core"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vCLAIM_Claim_info",
+        "columns": [
+          {
+            "name": "POLICY_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "POLICY_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "COMPONENT_CODE",
+            "dataType": "string",
+            "sourceColumn": "COMPONENT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE",
+            "dataType": "string",
+            "sourceColumn": "LIFE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "COVERAGE",
+            "dataType": "string",
+            "sourceColumn": "COVERAGE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RIDER",
+            "dataType": "string",
+            "sourceColumn": "RIDER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "TRANNO",
+            "dataType": "double",
+            "sourceColumn": "TRANNO",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "SUM_ASSURED",
+            "dataType": "double",
+            "sourceColumn": "SUM_ASSURED",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "fn_change_unicode",
+            "dataType": "string",
+            "sourceColumn": "fn_change_unicode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "LA_IDNUMBER",
+            "dataType": "string",
+            "sourceColumn": "LA_IDNUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LA_CLIENT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "LA_CLIENT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LA_DOB",
+            "dataType": "dateTime",
+            "sourceColumn": "LA_DOB",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "LA_SEX",
+            "dataType": "string",
+            "sourceColumn": "LA_SEX",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "REGP_TYPE",
+            "dataType": "string",
+            "sourceColumn": "REGP_TYPE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CLM_OCCUR_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CLM_OCCUR_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "CLM_SUBMIT_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CLM_SUBMIT_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "CLAIM_HISTORY",
+            "dataType": "int64",
+            "sourceColumn": "CLAIM_HISTORY",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CLMSTAT",
+            "dataType": "string",
+            "sourceColumn": "CLMSTAT",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CLMNUM",
+            "dataType": "double",
+            "sourceColumn": "CLMNUM",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TOTAMNT",
+            "dataType": "double",
+            "sourceColumn": "TOTAMNT",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "APRVDATE",
+            "dataType": "double",
+            "sourceColumn": "APRVDATE",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vCLAIM_Claim_info",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vCLAIM_Claim_info].* FROM [dbo].[vCLAIM_Claim_info] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vCLAIM_Claim_info].* FROM [dbo].[vCLAIM_Claim_info] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vCLAIM_Claim_info"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vCLAIM_Policy_info",
+        "columns": [
+          {
+            "name": "CONTRACT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "CONTRACT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PO_NAME",
+            "dataType": "string",
+            "sourceColumn": "PO_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PO_IDNUMBER",
+            "dataType": "string",
+            "sourceColumn": "PO_IDNUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PO_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "PO_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PO_DOB",
+            "dataType": "dateTime",
+            "sourceColumn": "PO_DOB",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RISK_COMMENCEMENT_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "RISK_COMMENCEMENT_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "SUM_ASSURED",
+            "dataType": "double",
+            "sourceColumn": "SUM_ASSURED",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "REINS_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "REINS_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "FLUP_CODES",
+            "dataType": "string",
+            "sourceColumn": "FLUP_CODES",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PAID_TO_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PAID_TO_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "POLICY_STATUS",
+            "dataType": "string",
+            "sourceColumn": "POLICY_STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LOAN_STATUS",
+            "dataType": "int64",
+            "sourceColumn": "LOAN_STATUS",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "LA_NAME",
+            "dataType": "string",
+            "sourceColumn": "LA_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "LA_IDNUMBER",
+            "dataType": "string",
+            "sourceColumn": "LA_IDNUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LA_CLIENT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "LA_CLIENT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LA_DOB",
+            "dataType": "dateTime",
+            "sourceColumn": "LA_DOB",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "LA_SEX",
+            "dataType": "string",
+            "sourceColumn": "LA_SEX",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_CHANNEL",
+            "dataType": "string",
+            "sourceColumn": "AGENT_CHANNEL",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "AGENT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_NAME",
+            "dataType": "string",
+            "sourceColumn": "AGENT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SALES_UNIT",
+            "dataType": "string",
+            "sourceColumn": "SALES_UNIT",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AREA_NAME",
+            "dataType": "string",
+            "sourceColumn": "AREA_NAME",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "BENEF_NAME",
+            "dataType": "string",
+            "sourceColumn": "BENEF_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BENEF_IDNUM",
+            "dataType": "string",
+            "sourceColumn": "BENEF_IDNUM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "BENEF_IDDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "BENEF_IDDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "BENEF_ADDRESS",
+            "dataType": "string",
+            "sourceColumn": "BENEF_ADDRESS",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ADDRESS1",
+            "dataType": "string",
+            "sourceColumn": "ADDRESS1",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ADDRESS2",
+            "dataType": "string",
+            "sourceColumn": "ADDRESS2",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ADDRESS3",
+            "dataType": "string",
+            "sourceColumn": "ADDRESS3",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ADDRESS4",
+            "dataType": "string",
+            "sourceColumn": "ADDRESS4",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ADDRESS5",
+            "dataType": "string",
+            "sourceColumn": "ADDRESS5",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PHONE",
+            "dataType": "string",
+            "sourceColumn": "PHONE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ISSUED_DATE",
+            "dataType": "string",
+            "sourceColumn": "ISSUED_DATE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CLN_MOBILE",
+            "dataType": "string",
+            "sourceColumn": "CLN_MOBILE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "BENEF_IDPLACE",
+            "dataType": "string",
+            "sourceColumn": "BENEF_IDPLACE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BENEF_DOB",
+            "dataType": "dateTime",
+            "sourceColumn": "BENEF_DOB",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "PO_IDPLACE",
+            "dataType": "string",
+            "sourceColumn": "PO_IDPLACE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PO_IDDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PO_IDDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "PO_ADDRESS",
+            "dataType": "string",
+            "sourceColumn": "PO_ADDRESS",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PROPOSAL_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PROPOSAL_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "AD_CODE",
+            "dataType": "string",
+            "sourceColumn": "AD_CODE",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vCLAIM_Policy_info",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vCLAIM_Policy_info].* FROM [dbo].[vCLAIM_Policy_info] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vCLAIM_Policy_info].* FROM [dbo].[vCLAIM_Policy_info] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vCLAIM_Policy_info"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vLife_Insured_Info",
+        "columns": [
+          {
+            "name": "CHDRNUM",
+            "dataType": "string",
+            "sourceColumn": "CHDRNUM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ZOWNREL",
+            "dataType": "string",
+            "sourceColumn": "ZOWNREL",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE",
+            "dataType": "string",
+            "sourceColumn": "LIFE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "COVERAGE",
+            "dataType": "string",
+            "sourceColumn": "COVERAGE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RIDER",
+            "dataType": "string",
+            "sourceColumn": "RIDER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE_REL",
+            "dataType": "string",
+            "sourceColumn": "LIFE_REL",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "LIFE_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "LIFE_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE_NAME",
+            "dataType": "string",
+            "sourceColumn": "LIFE_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "LIFE_DOB",
+            "dataType": "string",
+            "sourceColumn": "LIFE_DOB",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SECUITYNO",
+            "dataType": "string",
+            "sourceColumn": "SECUITYNO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE_PHONE",
+            "dataType": "string",
+            "sourceColumn": "LIFE_PHONE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CRTABLE",
+            "dataType": "string",
+            "sourceColumn": "CRTABLE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RIDER_PRODUCT",
+            "dataType": "string",
+            "sourceColumn": "RIDER_PRODUCT",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SUMINS",
+            "dataType": "double",
+            "sourceColumn": "SUMINS",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RCD",
+            "dataType": "double",
+            "sourceColumn": "RCD",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "STATCODE",
+            "dataType": "string",
+            "sourceColumn": "STATCODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "VALIDFLAG",
+            "dataType": "string",
+            "sourceColumn": "VALIDFLAG",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CLIENT_ADDR1",
+            "dataType": "string",
+            "sourceColumn": "CLIENT_ADDR1",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CLIENT_ADDR2",
+            "dataType": "string",
+            "sourceColumn": "CLIENT_ADDR2",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CLIENT_ADDR3",
+            "dataType": "string",
+            "sourceColumn": "CLIENT_ADDR3",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CLIENT_ADDR4",
+            "dataType": "string",
+            "sourceColumn": "CLIENT_ADDR4",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CLIENT_ADDR5",
+            "dataType": "string",
+            "sourceColumn": "CLIENT_ADDR5",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "COMPONENT_STATUS",
+            "dataType": "string",
+            "sourceColumn": "COMPONENT_STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CLTSEX",
+            "dataType": "string",
+            "sourceColumn": "CLTSEX",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vLife_Insured_Info",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vLife_Insured_Info].* FROM [dbo].[vLife_Insured_Info] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vLife_Insured_Info].* FROM [dbo].[vLife_Insured_Info] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vLife_Insured_Info"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vw_Agent_For_ADO",
+        "columns": [
+          {
+            "name": "AGENT_CODE",
+            "dataType": "string",
+            "sourceColumn": "AGENT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "ID_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_NAME",
+            "dataType": "string",
+            "sourceColumn": "AGENT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GRADE",
+            "dataType": "string",
+            "sourceColumn": "GRADE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "GRADE_NAME",
+            "dataType": "string",
+            "sourceColumn": "GRADE_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AGENT_STATUS",
+            "dataType": "string",
+            "sourceColumn": "AGENT_STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SALES_UNIT_CODE",
+            "dataType": "string",
+            "sourceColumn": "SALES_UNIT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SALES_UNIT_NAME",
+            "dataType": "string",
+            "sourceColumn": "SALES_UNIT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "REPORTING_TO_CODE",
+            "dataType": "string",
+            "sourceColumn": "REPORTING_TO_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "REPORTING_TO_NAME",
+            "dataType": "string",
+            "sourceColumn": "REPORTING_TO_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GRADE_REPORTING_TO",
+            "dataType": "string",
+            "sourceColumn": "GRADE_REPORTING_TO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CREATED_BY",
+            "dataType": "string",
+            "sourceColumn": "CREATED_BY",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CREATED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CREATED_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "HEAD_PHONE",
+            "dataType": "string",
+            "sourceColumn": "HEAD_PHONE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "OFFICE",
+            "dataType": "string",
+            "sourceColumn": "OFFICE",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vw_Agent_For_ADO",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vw_Agent_For_ADO].* FROM [dbo].[vw_Agent_For_ADO] ",
+              "dataSource": "SqlServer 10.9.2.70 Integral"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vw_Agent_For_ADO].* FROM [dbo].[vw_Agent_For_ADO] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vw_Agent_For_ADO"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

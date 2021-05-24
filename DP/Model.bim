@@ -1,0 +1,3459 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "name": "PHL",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer 10.9.2.70 PowerBI",
+        "connectionString": "Provider=SQLNCLI11;Data Source=10.9.2.70;Persist Security Info=false;User ID=PHUHUNGLIFE\\vagy0409;Integrated Security=SSPI;Initial Catalog=PowerBI",
+        "impersonationMode": "impersonateAccount",
+        "account": "PHUHUNGLIFE\\vagy0409",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimAgent",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Office",
+            "dataType": "string",
+            "sourceColumn": "Office",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Date_Appointed",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_Appointed",
+            "formatString": "Short Date",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "Terminated_date",
+            "dataType": "dateTime",
+            "sourceColumn": "Terminated_date"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_Agent",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Agent].* FROM [DPO].[DW_Agent] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>75</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Name</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>80</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Grade</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>81</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>82</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Date_Appointed</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>153</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Terminated_date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>159</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>106</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Name</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>111</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Office</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>80</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Name</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Grade</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Date_Appointed</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Terminated_date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Name</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Office</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Date_Appointed</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Terminated_date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Agent].* FROM [DPO].[DW_Agent] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Agent"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>75</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Name</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>80</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Grade</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>81</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>82</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Date_Appointed</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>153</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Terminated_date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>159</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>106</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Name</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>111</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Office</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>80</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Name</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Grade</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Date_Appointed</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Terminated_date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Name</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Office</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>Date_Appointed</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Terminated_date</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DimOffice",
+        "columns": [
+          {
+            "name": "Office_Code",
+            "dataType": "string",
+            "sourceColumn": "Office_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Office_Name",
+            "dataType": "string",
+            "sourceColumn": "Office_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimOffice",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Office].* FROM [DPO].[DW_Office] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Office].* FROM [DPO].[DW_Office] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Office"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimTerritory",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimTerritory",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Territory].* FROM [DPO].[DW_Territory] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Territory].* FROM [DPO].[DW_Territory] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Territory"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "yyyy-MM-dd",
+            "sourceProviderType": "DBDate",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"yyyy-MM-dd\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "DateInt",
+            "dataType": "int64",
+            "sourceColumn": "DateInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month Name",
+            "dataType": "string",
+            "sourceColumn": "Month Name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month & Year",
+            "dataType": "string",
+            "sourceColumn": "Month & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Quarter & Year",
+            "dataType": "string",
+            "sourceColumn": "Quarter & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeekEnding",
+            "dataType": "string",
+            "sourceColumn": "WeekEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthEnding",
+            "dataType": "string",
+            "sourceColumn": "MonthEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ISO Weeknumber",
+            "dataType": "int64",
+            "sourceColumn": "ISO Weeknumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ISO Day of Year",
+            "dataType": "int64",
+            "sourceColumn": "ISO Day of Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Week & Year",
+            "dataType": "string",
+            "sourceColumn": "Week & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeeknYear",
+            "dataType": "int64",
+            "sourceColumn": "WeeknYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthnYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthnYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "QuarternYear",
+            "dataType": "int64",
+            "sourceColumn": "QuarternYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Quarter",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Quarter",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Period",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Period",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsWorkingDay",
+            "dataType": "string",
+            "sourceColumn": "IsWorkingDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "string",
+            "sourceColumn": "IsHoliday",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsBusinessDay",
+            "dataType": "string",
+            "sourceColumn": "IsBusinessDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Day Type",
+            "dataType": "string",
+            "sourceColumn": "Day Type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month Short",
+            "dataType": "string",
+            "sourceColumn": "Month Short",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "Month",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "MONTH(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "year(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Day",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "DAY(DimDate[Date])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy Time",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Year"
+              },
+              {
+                "name": "Month",
+                "ordinal": 1,
+                "column": "Month"
+              },
+              {
+                "name": "Day",
+                "ordinal": 2,
+                "column": "Day"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Main_CALENDAR"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimADSecurity",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "ADUsername",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(DimADSecurity[AD_Code],\"AD367\",\"PHUHUNGLIFE\\vagy0566\",\"AD102\",\"PHUHUNGLIFE\\vagy0225\",\"AD324\",\"PHUHUNGLIFE\\vagy0567\",\"AD179\",\"PHUHUNGLIFE\\vagy0332\",\"AD213\",\"PHUHUNGLIFE\\vpns0117\",\"AD088\",\"PHUHUNGLIFE\\vagy0188\",\"AD226\",\"PHUHUNGLIFE\\vagy0402\",\"AD507\",\"PHUHUNGLIFE\\vagy0743\",\"AD421\",\"PHUHUNGLIFE\\vagy0693\",\"AD098\",\"PHUHUNGLIFE\\vagy0215\",\"AD223\",\"PHUHUNGLIFE\\vagy0395\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimADList",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "CurrentLogin",
+            "expression": " username()"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Agent_Status",
+        "columns": [
+          {
+            "name": "Sales_Unit_Code",
+            "dataType": "string",
+            "sourceColumn": "Sales_Unit_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Agent_Number",
+            "dataType": "string",
+            "sourceColumn": "Agent_Number",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Agent_Name",
+            "dataType": "string",
+            "sourceColumn": "Agent_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DateType",
+            "dataType": "string",
+            "sourceColumn": "DateType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DateActive",
+            "dataType": "dateTime",
+            "sourceColumn": "DateActive",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Agent_Status",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_AD_Agentstatus].* FROM [DPO].[Cal_AD_Agentstatus] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Recruited",
+            "expression": [
+              " ",
+              "VAR CR = COUNTROWS(",
+              "FILTER(Cal_AD_Agent_Status",
+              "    ,Cal_AD_Agent_Status[DateType] = \"Date_Appointed\" ",
+              "    && LEFT(Cal_AD_Agent_Status[Agent_Name],5) <> \"DUMMY\"))",
+              "RETURN",
+              "IF(ISBLANK(CR),0,CR)"
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "Terminated",
+            "expression": [
+              " ",
+              "VAR CR = COUNTROWS(",
+              "FILTER(Cal_AD_Agent_Status",
+              "    ,Cal_AD_Agent_status[DateType] = \"Terminated_date\" ",
+              "    && LEFT(Cal_AD_Agent_status[Agent_Name],5) <> \"DUMMY\"))",
+              "RETURN",
+              "IF(ISBLANK(CR),0,CR)"
+            ],
+            "formatString": "0"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_AD_Agentstatus].* FROM [DPO].[Cal_AD_Agentstatus] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_AD_Agentstatus"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Premium",
+        "columns": [
+          {
+            "name": "Policy No",
+            "dataType": "string",
+            "sourceColumn": "Policy No",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Collected Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Collected Date",
+            "formatString": "dd-MMM-yy",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Issued Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Issued Date",
+            "formatString": "dd-MMM-yy",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Policy Status",
+            "dataType": "string",
+            "sourceColumn": "Policy Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Issuing Agent",
+            "dataType": "string",
+            "sourceColumn": "Issuing Agent",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Servicing Agent",
+            "dataType": "int64",
+            "sourceColumn": "Servicing Agent",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FYP",
+            "dataType": "int64",
+            "sourceColumn": "FYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RYP",
+            "dataType": "int64",
+            "sourceColumn": "RYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Topup",
+            "dataType": "int64",
+            "sourceColumn": "Topup",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AFYP",
+            "dataType": "int64",
+            "sourceColumn": "AFYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FYPincTopup",
+            "dataType": "int64",
+            "sourceColumn": "FYPincTopup",
+            "formatString": "#,0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Premium",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy No</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>105</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Collected Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>140</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issued Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>122</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>128</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issuing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>137</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Servicing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>150</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>66</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>68</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Topup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>85</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>132</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AFYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>77</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>106</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy No</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Collected Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issued Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issuing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Servicing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Topup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AFYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "FYP - YTD",
+            "expression": "TOTALYTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "FYP - MTD",
+            "expression": "TOTALMTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "FYP - QTD",
+            "expression": "TOTALQTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "AFYP - YTD",
+            "expression": "TOTALYTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "AFYP - MTD",
+            "expression": "TOTALMTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "AFYP - QTD",
+            "expression": "TOTALQTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "CaseSize",
+            "expression": " SUM(Cal_AD_Premium[FYPincTopup]) / SUM(Cal_AD_Daily_Policy[CountPolicy])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "CasePerActive",
+            "expression": " SUM(Cal_AD_Daily_Policy[CountPolicy])/ [Active_Agent]",
+            "formatString": "0.00"
+          },
+          {
+            "name": "Active_Agent",
+            "expression": [
+              " ",
+              "VAR CC = SUM(Cal_AD_Daily_Policy[CountPolicy])",
+              "RETURN ",
+              "CALCULATE(",
+              "COUNTROWS(DISTINCT(Cal_AD_Daily_Policy[Issuing Agent])),",
+              "FILTER(Cal_AD_Daily_Policy, CC > 0))"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Cal_FYPinclTopup",
+            "expression": " SUM(Cal_AD_Premium[FYPincTopup]) + 0",
+            "formatString": "\"\"#,0;(\"\"#,0);\"\"#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"\" Symbol=\"\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_ADpremium"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy No</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>105</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Collected Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>140</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issued Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>122</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>128</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issuing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>137</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Servicing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>150</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>66</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>68</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Topup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>85</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>132</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AFYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>77</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>106</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy No</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Collected Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issued Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issuing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Servicing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Topup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AFYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Daily_Policy",
+        "columns": [
+          {
+            "name": "Issuing Agent",
+            "dataType": "string",
+            "sourceColumn": "Issuing Agent",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Policy No",
+            "dataType": "string",
+            "sourceColumn": "Policy No",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DateActive",
+            "dataType": "dateTime",
+            "sourceColumn": "DateActive",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CountPolicy",
+            "dataType": "int64",
+            "sourceColumn": "CountPolicy",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_AD_Daily_Policy",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD_DailyPolicy].* FROM [DPO].[DW_AD_DailyPolicy] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD_DailyPolicy].* FROM [DPO].[DW_AD_DailyPolicy] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD_DailyPolicy"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimAD",
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "isUnique": true,
+            "isKey": true,
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Structure",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(FactADHistory[structure], FactADHistory[AD_Code],DimAD[AD_Code], FactADHistory[ExplodedDate], TODAY())"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_AD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimAgentSFC",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Date_Appointed",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_Appointed",
+            "formatString": "yyyy-MM-dd",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"yyyy-MM-dd\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Date_LastIssue",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_LastIssue",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Date_LastService",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_LastService",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Month_Issued",
+            "dataType": "int64",
+            "sourceColumn": "Month_Issued",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month_Serviced",
+            "dataType": "int64",
+            "sourceColumn": "Month_Serviced",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Check_SFC",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              "",
+              "IF(DimAgentSFC[Status] = \"Terminated\", \"Terminated\"",
+              "        ,IF(DimAgentSFC[Grade] = \"FC\"",
+              "        ,IF(DimAgentSFC[Month_Issued] >= 6 && DimAgentSFC[Date_LastService] <> 0, \"SFC\"",
+              "        ,\"Active\"",
+              "        )",
+              "        ,\"Active\"",
+              "        ))"
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_Agent_SFC",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Agent_SFC].* FROM [DPO].[DW_Agent_SFC] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "AA_Ratio",
+            "expression": [
+              " ",
+              "VAR M = CALCULATE(COUNTROWS(DISTINCT(DimAgentSFC[Code])),",
+              "DimAgentSFC[Check_SFC] <> \"Terminated\")",
+              "RETURN",
+              "Format(DIVIDE([Active_Agent],M),\"Percent\")"
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Agent_SFC].* FROM [DPO].[DW_Agent_SFC] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Agent_SFC"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Target_AD",
+        "columns": [
+          {
+            "name": "AD Code",
+            "dataType": "string",
+            "sourceColumn": "AD Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD Name",
+            "dataType": "string",
+            "sourceColumn": "AD Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthTarget",
+            "dataType": "int64",
+            "sourceColumn": "MonthTarget",
+            "formatString": "0",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TargetFYP",
+            "dataType": "int64",
+            "sourceColumn": "TargetFYP",
+            "formatString": "0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "type": "calculated",
+            "name": "Target",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "[TargetFYP]*1000000",
+            "formatString": "\"\"#,0;(\"\"#,0);\"\"#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"\" Symbol=\"\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Target_AD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Target_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "FactADHistory",
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "structure",
+            "dataType": "string",
+            "sourceColumn": "structure",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Territory_Code",
+            "dataType": "string",
+            "sourceColumn": "Territory_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ExplodedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ExplodedDate",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "L0",
+            "dataType": "string",
+            "sourceColumn": "L0",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L1",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L1",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L2",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L2",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L3",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L3",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L4",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L4",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "KeyADTime",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FactADHistory[AD_Code] & FORMAT ( FactADHistory[ExplodedDate], \"YYYYMMDD\" )"
+          },
+          {
+            "type": "calculated",
+            "name": "L0Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L0])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L1new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L2new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L3new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L4new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L1] = BLANK(), FactADHistory[L0],FactADHistory[L1])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L2] = BLANK(), FactADHistory[L1new],FactADHistory[L2])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L3] = BLANK(), FactADHistory[L2new],FactADHistory[L3])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L4] = BLANK(), FactADHistory[L3new],FactADHistory[L4])"
+          },
+          {
+            "name": "SE",
+            "dataType": "string",
+            "sourceColumn": "SE"
+          },
+          {
+            "type": "calculated",
+            "name": "AD_Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[AD_Code])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactAD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[AD5].* FROM [DPO].[AD5] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>106</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Territory_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>146</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ExplodedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>136</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CDO</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>72</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>60</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SRD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>69</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>60</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ZDSZD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>88</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>57</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Structure</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>103</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L0</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L1</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L2</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L3</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L4</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Territory_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ExplodedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CDO</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SRD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ZDSZD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Structure</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L0</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L1</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L2</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L3</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>L4</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>14</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CDO</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SRD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ZDSZD</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy ADName",
+            "levels": [
+              {
+                "name": "L0Name",
+                "ordinal": 0,
+                "column": "L0Name"
+              },
+              {
+                "name": "L1Name",
+                "ordinal": 1,
+                "column": "L1Name"
+              },
+              {
+                "name": "L2Name",
+                "ordinal": 2,
+                "column": "L2Name"
+              },
+              {
+                "name": "L3Name",
+                "ordinal": 3,
+                "column": "L3Name"
+              },
+              {
+                "name": "L4Name",
+                "ordinal": 4,
+                "column": "L4Name"
+              }
+            ]
+          },
+          {
+            "name": "Hierarchy ADCode",
+            "levels": [
+              {
+                "name": "L0",
+                "ordinal": 0,
+                "column": "L0"
+              },
+              {
+                "name": "L1new",
+                "ordinal": 1,
+                "column": "L1new"
+              },
+              {
+                "name": "L2new",
+                "ordinal": 2,
+                "column": "L2new"
+              },
+              {
+                "name": "L3new",
+                "ordinal": 3,
+                "column": "L3new"
+              },
+              {
+                "name": "L4new",
+                "ordinal": 4,
+                "column": "L4new"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[AD5].* FROM [DPO].[AD5] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "AD5"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>106</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Territory_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>146</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ExplodedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>136</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CDO</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>72</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>60</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SRD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>69</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>60</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ZDSZD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>88</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SE</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>57</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Structure</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>103</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L0</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L1</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L2</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L3</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L4</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Territory_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ExplodedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CDO</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SRD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ZDSZD</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SE</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Structure</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L0</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L1</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L2</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L3</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>L4</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>14</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>CDO</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TD</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SRD</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RD</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ZDSZD</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SE</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DimAD2",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAD2",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "FactCSSubmission",
+        "columns": [
+          {
+            "name": "APPLICATION_NO",
+            "dataType": "string",
+            "sourceColumn": "APPLICATION_NO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AGENT_CODE",
+            "dataType": "string",
+            "sourceColumn": "AGENT_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "INSTALMENT_PREMIUM",
+            "dataType": "double",
+            "sourceColumn": "INSTALMENT_PREMIUM",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "FREQUENCY",
+            "dataType": "string",
+            "sourceColumn": "FREQUENCY",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PO_NAME",
+            "dataType": "string",
+            "sourceColumn": "PO_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PAYMENT_METHOD",
+            "dataType": "string",
+            "sourceColumn": "PAYMENT_METHOD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CREATED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CREATED_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "FULLNAME",
+            "dataType": "string",
+            "sourceColumn": "FULLNAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TRANS_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "TRANS_DATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "COMMENTS",
+            "dataType": "string",
+            "sourceColumn": "COMMENTS",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CHANNEL",
+            "dataType": "string",
+            "sourceColumn": "CHANNEL",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_CODE",
+            "dataType": "string",
+            "sourceColumn": "AD_CODE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_NAME",
+            "dataType": "string",
+            "sourceColumn": "AD_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TERRITORY",
+            "dataType": "string",
+            "sourceColumn": "TERRITORY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AD_OFFICE",
+            "dataType": "string",
+            "sourceColumn": "AD_OFFICE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "ID",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FactCSSubmission[AD_CODE] & FORMAT ( FactCSSubmission[CREATED_DATE], \"YYYYMMDD\" )"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vCS_APPLICATION_PREMIUM",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vCS_APPLICATION_PREMIUM"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_K2",
+        "columns": [
+          {
+            "name": "Sales_Unit_Code",
+            "dataType": "string",
+            "sourceColumn": "Sales_Unit_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD",
+            "dataType": "string",
+            "sourceColumn": "AD",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AGENT NO",
+            "dataType": "string",
+            "sourceColumn": "AGENT NO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "POLICY NO",
+            "dataType": "string",
+            "sourceColumn": "POLICY NO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LIFE",
+            "dataType": "string",
+            "sourceColumn": "LIFE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "COMPONENT",
+            "dataType": "string",
+            "sourceColumn": "COMPONENT",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RCD",
+            "dataType": "dateTime",
+            "sourceColumn": "RCD",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "Effected Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Effected Date",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "PTD",
+            "dataType": "dateTime",
+            "sourceColumn": "PTD",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "FREQUENCY",
+            "dataType": "string",
+            "sourceColumn": "FREQUENCY",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "COMPONENT STATUS",
+            "dataType": "string",
+            "sourceColumn": "COMPONENT STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Y2 ACTUAL PREM",
+            "dataType": "double",
+            "sourceColumn": "Y2 ACTUAL PREM",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Y2 EXPECTED PREM",
+            "dataType": "double",
+            "sourceColumn": "Y2 EXPECTED PREM",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "type": "calculated",
+            "name": "KeyADTime",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "Cal_AD_K2[Sales_Unit_Code] & FORMAT ( today(), \"YYYYMMDD\" )"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_K2",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_AD_K2].* FROM [DPO].[Cal_AD_K2] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_AD_K2].* FROM [DPO].[Cal_AD_K2] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_AD_K2"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Pending",
+        "columns": [
+          {
+            "name": "AGNTNUM",
+            "dataType": "string",
+            "sourceColumn": "AGNTNUM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "APPLICATION_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "APPLICATION_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CONTRACT_NUMBER",
+            "dataType": "string",
+            "sourceColumn": "CONTRACT_NUMBER",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CONTRACT_STATUS",
+            "dataType": "string",
+            "sourceColumn": "CONTRACT_STATUS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FIRST_PREMIUM",
+            "dataType": "decimal",
+            "sourceColumn": "FIRST_PREMIUM",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "SUBMIT_AMT",
+            "dataType": "decimal",
+            "sourceColumn": "SUBMIT_AMT",
+            "formatString": "\"\"#,0;(\"\"#,0);\"\"#,0",
+            "sourceProviderType": "Numeric",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"\" Symbol=\"\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "EFFECTIVE_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "EFFECTIVE_DATE",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "TRANSACTION_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "TRANSACTION_DATE",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "FIRST_ISSUED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "FIRST_ISSUED_DATE",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "ISSUED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "ISSUED_DATE",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Pending",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_AD_Pending].* FROM [DPO].[Cal_AD_Pending] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_AD_Pending].* FROM [DPO].[Cal_AD_Pending] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_AD_Pending"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "4bde5394-28d0-495b-bf07-2c22cdaf8149",
+        "fromTable": "DimAgent",
+        "fromColumn": "AD_Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code"
+      },
+      {
+        "name": "4a92079b-6b22-4774-8690-df4984fdc62c",
+        "fromCardinality": "one",
+        "fromTable": "DimAgentSFC",
+        "fromColumn": "Code",
+        "toTable": "DimAgent",
+        "toColumn": "Code",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "59f13814-5bef-49e7-8cde-320b81dea917",
+        "fromTable": "Target_AD",
+        "fromColumn": "AD Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code"
+      },
+      {
+        "name": "b15c1362-e606-4a1e-9fd9-1f6d91fe75a2",
+        "fromTable": "FactADHistory",
+        "fromColumn": "Territory_Code",
+        "toTable": "DimTerritory",
+        "toColumn": "Code"
+      },
+      {
+        "name": "672fbe47-4ca5-44db-b7f9-119cda1178cb",
+        "fromTable": "FactADHistory",
+        "fromColumn": "ExplodedDate",
+        "toTable": "DimDate",
+        "toColumn": "Date"
+      },
+      {
+        "name": "28628c65-0d65-44e9-ae01-f1294d5622cf",
+        "fromTable": "Cal_AD_Premium",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "5b87b4ab-a66a-47ce-a815-5b0ffb2d19a6",
+        "fromTable": "Cal_AD_Agent_Status",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "f7be7e11-32d6-4477-aefb-9e3dd1d6cb04",
+        "fromTable": "Cal_AD_Daily_Policy",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "4a5261f5-3bf1-4730-b548-8b806b4bd423",
+        "fromTable": "FactADHistory",
+        "fromColumn": "AD_Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "9119f660-8347-4dd1-b793-694e275f083a",
+        "fromTable": "FactCSSubmission",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "c21407a5-595f-455d-a78b-a69df874f422",
+        "fromTable": "Cal_AD_K2",
+        "fromColumn": "KeyADTime",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "9486446d-7485-4690-92ea-457129547f6c",
+        "fromTable": "Cal_AD_Pending",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      }
+    ],
+    "roles": [
+      {
+        "name": "TDRDDirect",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0566",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2591"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0225",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3244"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0567",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2592"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0332",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3563"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vpns0117",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2822"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0188",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3098"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0402",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4804"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0743",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5885"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0693",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6312"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0215",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3220"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0395",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4791"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "DimADSecurity",
+            "filterExpression": "FALSE()"
+          },
+          {
+            "name": "FactADHistory",
+            "filterExpression": "PATHCONTAINS(FactADHistory[structure],LOOKUPVALUE(DimADSecurity[AD_Code], DimADSecurity[ADUsername],USERNAME()))"
+          },
+          {
+            "name": "DimAD",
+            "filterExpression": "PATHCONTAINS(DimAD[Structure],LOOKUPVALUE(DimADSecurity[AD_Code], DimADSecurity[ADUsername],USERNAME()))"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

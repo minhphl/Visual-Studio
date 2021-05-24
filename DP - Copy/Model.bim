@@ -1,0 +1,2057 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "name": "PHL",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer 10.9.2.70 PowerBI",
+        "connectionString": "Provider=SQLNCLI11;Data Source=10.9.2.70;Persist Security Info=true;User ID=PHUHUNGLIFE\\vagy0409;Integrated Security=SSPI;Initial Catalog=PowerBI",
+        "impersonationMode": "impersonateAccount",
+        "account": "PHUHUNGLIFE\\vagy0409",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimAgent",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Office",
+            "dataType": "string",
+            "sourceColumn": "Office",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_Agent",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Agent].* FROM [DPO].[DW_Agent] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Agent].* FROM [DPO].[DW_Agent] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Agent"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimOffice",
+        "columns": [
+          {
+            "name": "Office_Code",
+            "dataType": "string",
+            "sourceColumn": "Office_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Office_Name",
+            "dataType": "string",
+            "sourceColumn": "Office_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimOffice",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Office].* FROM [DPO].[DW_Office] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Office].* FROM [DPO].[DW_Office] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Office"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimTerritory",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimTerritory",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Territory].* FROM [DPO].[DW_Territory] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Territory].* FROM [DPO].[DW_Territory] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Territory"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "yyyy-MM-dd",
+            "sourceProviderType": "DBDate",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"yyyy-MM-dd\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "DateInt",
+            "dataType": "int64",
+            "sourceColumn": "DateInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month Name",
+            "dataType": "string",
+            "sourceColumn": "Month Name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month & Year",
+            "dataType": "string",
+            "sourceColumn": "Month & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Quarter & Year",
+            "dataType": "string",
+            "sourceColumn": "Quarter & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeekEnding",
+            "dataType": "string",
+            "sourceColumn": "WeekEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthEnding",
+            "dataType": "string",
+            "sourceColumn": "MonthEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ISO Weeknumber",
+            "dataType": "int64",
+            "sourceColumn": "ISO Weeknumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ISO Day of Year",
+            "dataType": "int64",
+            "sourceColumn": "ISO Day of Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Week & Year",
+            "dataType": "string",
+            "sourceColumn": "Week & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeeknYear",
+            "dataType": "int64",
+            "sourceColumn": "WeeknYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthnYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthnYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "QuarternYear",
+            "dataType": "int64",
+            "sourceColumn": "QuarternYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Quarter",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Quarter",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Period",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Period",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsWorkingDay",
+            "dataType": "string",
+            "sourceColumn": "IsWorkingDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "string",
+            "sourceColumn": "IsHoliday",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsBusinessDay",
+            "dataType": "string",
+            "sourceColumn": "IsBusinessDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Day Type",
+            "dataType": "string",
+            "sourceColumn": "Day Type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month Short",
+            "dataType": "string",
+            "sourceColumn": "Month Short",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "Month",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "MONTH(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "year(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Day",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "DAY(DimDate[Date])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy Time",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Year"
+              },
+              {
+                "name": "Month",
+                "ordinal": 1,
+                "column": "Month"
+              },
+              {
+                "name": "Day",
+                "ordinal": 2,
+                "column": "Day"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Main_CALENDAR"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimADSecurity",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "ADUsername",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(DimADSecurity[AD_Code],\"AD367\",\"PHUHUNGLIFE\\vagy0566\",\"AD102\",\"PHUHUNGLIFE\\vagy0225\",\"AD324\",\"PHUHUNGLIFE\\vagy0567\",\"AD179\",\"PHUHUNGLIFE\\vagy0332\",\"AD213\",\"PHUHUNGLIFE\\vpns0117\",\"AD088\",\"PHUHUNGLIFE\\vagy0188\",\"AD226\",\"PHUHUNGLIFE\\vagy0402\",\"AD507\",\"PHUHUNGLIFE\\vagy0743\",\"AD421\",\"PHUHUNGLIFE\\vagy0693\",\"AD098\",\"PHUHUNGLIFE\\vagy0215\",\"AD223\",\"PHUHUNGLIFE\\vagy0395\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimADList",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Agent_Status",
+        "columns": [
+          {
+            "name": "Sales_Unit_Code",
+            "dataType": "string",
+            "sourceColumn": "Sales_Unit_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Agent_Number",
+            "dataType": "string",
+            "sourceColumn": "Agent_Number",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Agent_Name",
+            "dataType": "string",
+            "sourceColumn": "Agent_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DateType",
+            "dataType": "string",
+            "sourceColumn": "DateType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DateActive",
+            "dataType": "dateTime",
+            "sourceColumn": "DateActive",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Agent_Status",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_AD_Agentstatus].* FROM [DPO].[Cal_AD_Agentstatus] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_AD_Agentstatus].* FROM [DPO].[Cal_AD_Agentstatus] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_AD_Agentstatus"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Pending",
+        "columns": [
+          {
+            "name": "Policy No",
+            "dataType": "string",
+            "sourceColumn": "Policy No",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Collected Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Collected Date",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "Issued Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Issued Date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Policy Status",
+            "dataType": "string",
+            "sourceColumn": "Policy Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Issuing Agent",
+            "dataType": "string",
+            "sourceColumn": "Issuing Agent",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Servicing Agent",
+            "dataType": "int64",
+            "sourceColumn": "Servicing Agent",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FYP",
+            "dataType": "int64",
+            "sourceColumn": "FYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RYP",
+            "dataType": "int64",
+            "sourceColumn": "RYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Topup",
+            "dataType": "int64",
+            "sourceColumn": "Topup",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AFYP",
+            "dataType": "int64",
+            "sourceColumn": "AFYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Pending",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_AD_Pending].* FROM [DPO].[Cal_AD_Pending] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_AD_Pending].* FROM [DPO].[Cal_AD_Pending] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_AD_Pending"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Premium",
+        "columns": [
+          {
+            "name": "Policy No",
+            "dataType": "string",
+            "sourceColumn": "Policy No",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Collected Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Collected Date",
+            "formatString": "dd-MMM-yy",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Issued Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Issued Date",
+            "formatString": "dd-MMM-yy",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Policy Status",
+            "dataType": "string",
+            "sourceColumn": "Policy Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Issuing Agent",
+            "dataType": "string",
+            "sourceColumn": "Issuing Agent",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Servicing Agent",
+            "dataType": "int64",
+            "sourceColumn": "Servicing Agent",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FYP",
+            "dataType": "int64",
+            "sourceColumn": "FYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RYP",
+            "dataType": "int64",
+            "sourceColumn": "RYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Topup",
+            "dataType": "int64",
+            "sourceColumn": "Topup",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AFYP",
+            "dataType": "int64",
+            "sourceColumn": "AFYP",
+            "formatString": "#,0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FYPincTopup",
+            "dataType": "int64",
+            "sourceColumn": "FYPincTopup",
+            "formatString": "#,0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Cal_AD_Premium",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy No</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>105</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Collected Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>140</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issued Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>122</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>128</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issuing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>137</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Servicing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>150</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>66</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>68</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Topup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>85</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>132</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AFYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>77</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>106</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>56</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy No</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Collected Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issued Date</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Policy Status</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Issuing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Servicing Agent</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Topup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AFYP</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AD_Code</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FYPincTopup</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Cal_ADpremium"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy No</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>105</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Collected Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>140</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issued Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>122</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>128</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issuing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>137</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Servicing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>150</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>66</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>68</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Topup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>85</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>132</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AFYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>77</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>106</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>56</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy No</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Collected Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issued Date</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Policy Status</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Issuing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Servicing Agent</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Topup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AFYP</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AD_Code</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>FYPincTopup</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cal_AD_Daily_Policy",
+        "columns": [
+          {
+            "name": "Issuing Agent",
+            "dataType": "string",
+            "sourceColumn": "Issuing Agent",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Policy No",
+            "dataType": "string",
+            "sourceColumn": "Policy No",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DateActive",
+            "dataType": "dateTime",
+            "sourceColumn": "DateActive",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CountPolicy",
+            "dataType": "int64",
+            "sourceColumn": "CountPolicy",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_AD_Daily_Policy",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD_DailyPolicy].* FROM [DPO].[DW_AD_DailyPolicy] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD_DailyPolicy].* FROM [DPO].[DW_AD_DailyPolicy] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD_DailyPolicy"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimAD",
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "isUnique": true,
+            "isKey": true,
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_AD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimAgentSFC",
+        "columns": [
+          {
+            "name": "Code",
+            "dataType": "string",
+            "sourceColumn": "Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Date_Appointed",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_Appointed",
+            "formatString": "yyyy-MM-dd",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"yyyy-MM-dd\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Date_LastIssue",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_LastIssue",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Date_LastService",
+            "dataType": "dateTime",
+            "sourceColumn": "Date_LastService",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Month_Issued",
+            "dataType": "int64",
+            "sourceColumn": "Month_Issued",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month_Serviced",
+            "dataType": "int64",
+            "sourceColumn": "Month_Serviced",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Check_SFC",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              "",
+              "IF(DimAgentSFC[Status] = \"Terminated\", \"Terminated\"",
+              "        ,IF(DimAgentSFC[Grade] = \"FC\"",
+              "        ,IF(DimAgentSFC[Month_Issued] >= 6 && DimAgentSFC[Date_LastService] <> 0, \"SFC\"",
+              "        ,\"Active\"",
+              "        )",
+              "        ,\"Active\"",
+              "        ))"
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DW_Agent_SFC",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_Agent_SFC].* FROM [DPO].[DW_Agent_SFC] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_Agent_SFC].* FROM [DPO].[DW_Agent_SFC] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_Agent_SFC"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Target_AD",
+        "columns": [
+          {
+            "name": "AD Code",
+            "dataType": "string",
+            "sourceColumn": "AD Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD Name",
+            "dataType": "string",
+            "sourceColumn": "AD Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Grade",
+            "dataType": "string",
+            "sourceColumn": "Grade",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthTarget",
+            "dataType": "int64",
+            "sourceColumn": "MonthTarget",
+            "formatString": "0",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TargetFYP",
+            "dataType": "int64",
+            "sourceColumn": "TargetFYP",
+            "formatString": "0",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "type": "calculated",
+            "name": "Target",
+            "dataType": "decimal",
+            "isDataTypeInferred": false,
+            "expression": "[TargetFYP]*1000000",
+            "formatString": "#,0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Target_AD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Target_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "FactADHistory",
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "glevel",
+            "dataType": "int64",
+            "sourceColumn": "glevel",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "structure",
+            "dataType": "string",
+            "sourceColumn": "structure",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Territory_Code",
+            "dataType": "string",
+            "sourceColumn": "Territory_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ExplodedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ExplodedDate",
+            "formatString": "Short Date",
+            "sourceProviderType": "DBTimeStamp",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+              }
+            ]
+          },
+          {
+            "name": "L0",
+            "dataType": "string",
+            "sourceColumn": "L0",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L1",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L1",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L2",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L2",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L3",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L3",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "L4",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L4",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "KeyADTime",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FactADHistory[AD_Code] & FORMAT ( FactADHistory[ExplodedDate], \"YYYYMMDD\" )"
+          },
+          {
+            "type": "calculated",
+            "name": "L0Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L0])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L1new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L2new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L3new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L4new])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L1] = BLANK(), FactADHistory[L0],FactADHistory[L1])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L2] = BLANK(), FactADHistory[L1new],FactADHistory[L2])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L3] = BLANK(), FactADHistory[L2new],FactADHistory[L3])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4new",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(FactADHistory[L4] = BLANK(), FactADHistory[L3new],FactADHistory[L4])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactAD",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[AD3].* FROM [DPO].[AD3] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy ADName",
+            "levels": [
+              {
+                "name": "L0Name",
+                "ordinal": 0,
+                "column": "L0Name"
+              },
+              {
+                "name": "L1Name",
+                "ordinal": 1,
+                "column": "L1Name"
+              },
+              {
+                "name": "L2Name",
+                "ordinal": 2,
+                "column": "L2Name"
+              },
+              {
+                "name": "L3Name",
+                "ordinal": 3,
+                "column": "L3Name"
+              },
+              {
+                "name": "L4Name",
+                "ordinal": 4,
+                "column": "L4Name"
+              }
+            ]
+          },
+          {
+            "name": "Hierarchy ADCode",
+            "levels": [
+              {
+                "name": "L0",
+                "ordinal": 0,
+                "column": "L0"
+              },
+              {
+                "name": "L1new",
+                "ordinal": 1,
+                "column": "L1new"
+              },
+              {
+                "name": "L2new",
+                "ordinal": 2,
+                "column": "L2new"
+              },
+              {
+                "name": "L3new",
+                "ordinal": 3,
+                "column": "L3new"
+              },
+              {
+                "name": "L4new",
+                "ordinal": 4,
+                "column": "L4new"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[AD3].* FROM [DPO].[AD3] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "AD3"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "DimAD2",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAD2",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "Measures Folder",
+        "partitions": [
+          {
+            "name": "New Table",
+            "source": {
+              "type": "query",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "AA_Ratio",
+            "expression": [
+              " ",
+              "VAR M = CALCULATE(COUNTROWS(DISTINCT(DimAgentSFC[Code])),",
+              "DimAgentSFC[Check_SFC] <> \"Terminated\")",
+              "RETURN",
+              "[Active_Agent]/M "
+            ]
+          },
+          {
+            "name": "FYP - YTD",
+            "expression": "TOTALYTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "FYP - MTD",
+            "expression": "TOTALMTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "FYP - QTD",
+            "expression": "TOTALQTD(SUM(Cal_AD_Premium[FYPincTopup]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "AFYP - YTD",
+            "expression": "TOTALYTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "AFYP - MTD",
+            "expression": "TOTALMTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "AFYP - QTD",
+            "expression": "TOTALQTD(SUM(Cal_AD_Premium[AFYP]),DimDate[Date],ALL(DimDate[Date]))"
+          },
+          {
+            "name": "CaseSize",
+            "expression": " SUM(Cal_AD_Premium[FYPincTopup]) / SUM(Cal_AD_Daily_Policy[CountPolicy])"
+          },
+          {
+            "name": "CasePerActive",
+            "expression": " SUM(Cal_AD_Daily_Policy[CountPolicy])/ [Active_Agent]"
+          },
+          {
+            "name": "Active_Agent",
+            "expression": [
+              " ",
+              "VAR CC = SUM(Cal_AD_Daily_Policy[CountPolicy])",
+              "RETURN ",
+              "CALCULATE(",
+              "COUNTROWS(DISTINCT(Cal_AD_Daily_Policy[Issuing Agent])),",
+              "FILTER(Cal_AD_Daily_Policy, CC > 0))"
+            ]
+          },
+          {
+            "name": "Terminated",
+            "expression": [
+              " ",
+              "VAR CR = COUNTROWS(",
+              "FILTER(Cal_AD_Agent_Status",
+              "    ,Cal_AD_Agent_status[DateType] = \"Terminated_date\" ",
+              "    && LEFT(Cal_AD_Agent_status[Agent_Name],5) <> \"DUMMY\"))",
+              "RETURN",
+              "IF(ISBLANK(CR),0,CR)"
+            ]
+          },
+          {
+            "name": "Recruited",
+            "expression": [
+              " ",
+              "VAR CR = COUNTROWS(",
+              "FILTER(Cal_AD_Agent_Status",
+              "    ,Cal_AD_Agent_Status[DateType] = \"Date_Appointed\" ",
+              "    && LEFT(Cal_AD_Agent_Status[Agent_Name],5) <> \"DUMMY\"))",
+              "RETURN",
+              "IF(ISBLANK(CR),0,CR)"
+            ]
+          },
+          {
+            "name": "CurrentLogin",
+            "expression": " username()"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "4bde5394-28d0-495b-bf07-2c22cdaf8149",
+        "fromTable": "DimAgent",
+        "fromColumn": "AD_Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code"
+      },
+      {
+        "name": "4a92079b-6b22-4774-8690-df4984fdc62c",
+        "fromCardinality": "one",
+        "fromTable": "DimAgentSFC",
+        "fromColumn": "Code",
+        "toTable": "DimAgent",
+        "toColumn": "Code",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "59f13814-5bef-49e7-8cde-320b81dea917",
+        "fromTable": "Target_AD",
+        "fromColumn": "AD Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code"
+      },
+      {
+        "name": "b15c1362-e606-4a1e-9fd9-1f6d91fe75a2",
+        "fromTable": "FactADHistory",
+        "fromColumn": "Territory_Code",
+        "toTable": "DimTerritory",
+        "toColumn": "Code"
+      },
+      {
+        "name": "672fbe47-4ca5-44db-b7f9-119cda1178cb",
+        "fromTable": "FactADHistory",
+        "fromColumn": "ExplodedDate",
+        "toTable": "DimDate",
+        "toColumn": "Date"
+      },
+      {
+        "name": "bb8b7574-63bd-45a0-be83-3b508c812c35",
+        "fromTable": "FactADHistory",
+        "fromColumn": "AD_Code",
+        "toTable": "DimAD",
+        "toColumn": "AD_Code",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "28628c65-0d65-44e9-ae01-f1294d5622cf",
+        "fromTable": "Cal_AD_Premium",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "5b87b4ab-a66a-47ce-a815-5b0ffb2d19a6",
+        "fromTable": "Cal_AD_Agent_Status",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "f7be7e11-32d6-4477-aefb-9e3dd1d6cb04",
+        "fromTable": "Cal_AD_Daily_Policy",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      },
+      {
+        "name": "35aa402a-31cf-43aa-8338-90eee840b10e",
+        "fromTable": "Cal_AD_Pending",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "KeyADTime"
+      }
+    ],
+    "roles": [
+      {
+        "name": "TDRDDirect",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0566",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2591"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0225",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3244"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0567",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2592"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0332",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3563"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vpns0117",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2822"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0188",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3098"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0402",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4804"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0743",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5885"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0693",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6312"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0215",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3220"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0395",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4791"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "DimADSecurity",
+            "filterExpression": "FALSE()"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}

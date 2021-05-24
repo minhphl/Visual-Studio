@@ -1,0 +1,512 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "name": "PHL",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer 10.9.2.70 PowerBI",
+        "connectionString": "Provider=SQLNCLI11;Data Source=10.9.2.70;Persist Security Info=false;User ID=PHUHUNGLIFE\\vagy0409;Integrated Security=SSPI;Initial Catalog=PowerBI",
+        "impersonationMode": "impersonateAccount",
+        "account": "PHUHUNGLIFE\\vagy0409",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "yyyy-MM-dd",
+            "sourceProviderType": "DBDate",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"yyyy-MM-dd\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "DateInt",
+            "dataType": "int64",
+            "sourceColumn": "DateInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month Name",
+            "dataType": "string",
+            "sourceColumn": "Month Name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month & Year",
+            "dataType": "string",
+            "sourceColumn": "Month & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Quarter & Year",
+            "dataType": "string",
+            "sourceColumn": "Quarter & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeekEnding",
+            "dataType": "string",
+            "sourceColumn": "WeekEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthEnding",
+            "dataType": "string",
+            "sourceColumn": "MonthEnding",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ISO Weeknumber",
+            "dataType": "int64",
+            "sourceColumn": "ISO Weeknumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ISO Day of Year",
+            "dataType": "int64",
+            "sourceColumn": "ISO Day of Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Week & Year",
+            "dataType": "string",
+            "sourceColumn": "Week & Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeeknYear",
+            "dataType": "int64",
+            "sourceColumn": "WeeknYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthnYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthnYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "QuarternYear",
+            "dataType": "int64",
+            "sourceColumn": "QuarternYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Quarter",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Quarter",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fiscal Period",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Period",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsWorkingDay",
+            "dataType": "string",
+            "sourceColumn": "IsWorkingDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "string",
+            "sourceColumn": "IsHoliday",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsBusinessDay",
+            "dataType": "string",
+            "sourceColumn": "IsBusinessDay",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Day Type",
+            "dataType": "string",
+            "sourceColumn": "Day Type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month Short",
+            "dataType": "string",
+            "sourceColumn": "Month Short",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "Month",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "MONTH(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "year(DimDate[Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Day",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "DAY(DimDate[Date])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy Time",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Year"
+              },
+              {
+                "name": "Month",
+                "ordinal": 1,
+                "column": "Month"
+              },
+              {
+                "name": "Day",
+                "ordinal": 2,
+                "column": "Day"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Main_CALENDAR].* FROM [dbo].[Main_CALENDAR] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Main_CALENDAR"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimAD2",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAD2",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DW_AD"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      },
+      {
+        "name": "AD5",
+        "columns": [
+          {
+            "name": "AD_Code",
+            "dataType": "string",
+            "sourceColumn": "AD_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Territory_Code",
+            "dataType": "string",
+            "sourceColumn": "Territory_Code",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ExplodedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ExplodedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CDO",
+            "dataType": "string",
+            "sourceColumn": "CDO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "TD",
+            "dataType": "string",
+            "sourceColumn": "TD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SRD",
+            "dataType": "string",
+            "sourceColumn": "SRD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RD",
+            "dataType": "string",
+            "sourceColumn": "RD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ZDSZD",
+            "dataType": "string",
+            "sourceColumn": "ZDSZD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SE",
+            "dataType": "string",
+            "sourceColumn": "SE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Structure",
+            "dataType": "string",
+            "sourceColumn": "Structure",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "L0",
+            "dataType": "string",
+            "sourceColumn": "L0",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "L1",
+            "dataType": "string",
+            "sourceColumn": "L1",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "L2",
+            "dataType": "string",
+            "sourceColumn": "L2",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "L3",
+            "dataType": "string",
+            "sourceColumn": "L3",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "L4",
+            "dataType": "string",
+            "sourceColumn": "L4",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "Calculated Column 1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "AD5[AD_Code] & FORMAT (AD5[ExplodedDate], \"YYYYMMDD\" )"
+          },
+          {
+            "type": "calculated",
+            "name": "L0Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],AD5[L0])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],AD5[L1])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],AD5[L2])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],AD5[L3])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],AD5[L4])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "AD5",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DPO].[AD5].* FROM [DPO].[AD5] ",
+              "dataSource": "SqlServer 10.9.2.70 PowerBI"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DPO].[AD5].* FROM [DPO].[AD5] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "AD5"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DPO"
+          }
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "name": "TDRDDirect",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0566",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2591"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0225",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3244"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0567",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2592"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0332",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3563"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vpns0117",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2822"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0188",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3098"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0402",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4804"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0743",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5885"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0693",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6312"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0215",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3220"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0395",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4791"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
