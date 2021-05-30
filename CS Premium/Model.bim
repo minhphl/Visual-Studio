@@ -103,6 +103,13 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "RELATED(DimTerritory[Territory])"
+          },
+          {
+            "type": "calculated",
+            "name": "Territory Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(DimTerritory[Territory])"
           }
         ],
         "partitions": [
@@ -823,6 +830,7 @@
       },
       {
         "name": "DimTerritory",
+        "isHidden": true,
         "columns": [
           {
             "name": "Code",
