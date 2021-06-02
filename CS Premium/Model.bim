@@ -1134,13 +1134,6 @@
           },
           {
             "type": "calculated",
-            "name": "Office_AD",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "RELATED(DimAgent[Area_Name])"
-          },
-          {
-            "type": "calculated",
             "name": "KeyADTime",
             "dataType": "string",
             "isDataTypeInferred": true,
@@ -1152,6 +1145,16 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "IF(DimTransactionCS[Office_AD]= DimTransactionCS[CHANNEL],\"AD Office\", \"Other Office\")"
+          },
+          {
+            "name": "TERRITORY",
+            "dataType": "string",
+            "sourceColumn": "TERRITORY"
+          },
+          {
+            "name": "Office_AD",
+            "dataType": "string",
+            "sourceColumn": "AD_OFFICE"
           }
         ],
         "partitions": [
@@ -1160,7 +1163,7 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].[APPLICATION_NO],[dbo].[vCS_APPLICATION_PREMIUM].[AGENT_CODE],[dbo].[vCS_APPLICATION_PREMIUM].[INSTALMENT_PREMIUM],[dbo].[vCS_APPLICATION_PREMIUM].[FREQUENCY],[dbo].[vCS_APPLICATION_PREMIUM].[PO_NAME],[dbo].[vCS_APPLICATION_PREMIUM].[PAYMENT_METHOD],[dbo].[vCS_APPLICATION_PREMIUM].[CREATED_DATE],[dbo].[vCS_APPLICATION_PREMIUM].[FULLNAME],[dbo].[vCS_APPLICATION_PREMIUM].[TRANS_DATE],[dbo].[vCS_APPLICATION_PREMIUM].[COMMENTS],[dbo].[vCS_APPLICATION_PREMIUM].[CHANNEL],[dbo].[vCS_APPLICATION_PREMIUM].[AD_CODE],[dbo].[vCS_APPLICATION_PREMIUM].[AD_NAME],[dbo].[vCS_APPLICATION_PREMIUM].[AD_OFFICE] FROM [dbo].[vCS_APPLICATION_PREMIUM] ",
+              "query": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] ",
               "dataSource": "SqlServer 10.9.2.70product PowerBI"
             },
             "annotations": [
@@ -1426,7 +1429,7 @@
                   "        <string>TERRITORY</string>",
                   "      </key>",
                   "      <value>",
-                  "        <boolean>false</boolean>",
+                  "        <boolean>true</boolean>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -1505,7 +1508,7 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].[APPLICATION_NO],[dbo].[vCS_APPLICATION_PREMIUM].[AGENT_CODE],[dbo].[vCS_APPLICATION_PREMIUM].[INSTALMENT_PREMIUM],[dbo].[vCS_APPLICATION_PREMIUM].[FREQUENCY],[dbo].[vCS_APPLICATION_PREMIUM].[PO_NAME],[dbo].[vCS_APPLICATION_PREMIUM].[PAYMENT_METHOD],[dbo].[vCS_APPLICATION_PREMIUM].[CREATED_DATE],[dbo].[vCS_APPLICATION_PREMIUM].[FULLNAME],[dbo].[vCS_APPLICATION_PREMIUM].[TRANS_DATE],[dbo].[vCS_APPLICATION_PREMIUM].[COMMENTS],[dbo].[vCS_APPLICATION_PREMIUM].[CHANNEL],[dbo].[vCS_APPLICATION_PREMIUM].[AD_CODE],[dbo].[vCS_APPLICATION_PREMIUM].[AD_NAME],[dbo].[vCS_APPLICATION_PREMIUM].[AD_OFFICE] FROM [dbo].[vCS_APPLICATION_PREMIUM] "
+            "value": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -1777,7 +1780,7 @@
               "        <string>TERRITORY</string>",
               "      </key>",
               "      <value>",
-              "        <boolean>false</boolean>",
+              "        <boolean>true</boolean>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -2153,11 +2156,11 @@
             ]
           },
           {
-            "name": "Terminated_date",
-            "dataType": "dateTime",
-            "sourceColumn": "Terminated_date",
-            "formatString": "General Date",
-            "sourceProviderType": "DBTimeStamp"
+            "type": "calculated",
+            "name": "Office_Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(DimOffice[Office_Name],DimOffice[Office_Code],DimAgent[Area_Name])"
           }
         ],
         "partitions": [
@@ -5079,13 +5082,6 @@
         "toTable": "DimTerritory",
         "toColumn": "Code",
         "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "680db7b0-a99d-4d70-beef-fc7177554ad6",
-        "fromTable": "DimAgent",
-        "fromColumn": "Area_Name",
-        "toTable": "DimOffice",
-        "toColumn": "Office_Code"
       },
       {
         "name": "7071753a-8737-4e5b-8991-89584b379c73",
