@@ -95,7 +95,7 @@
             "name": "AD_Name",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "related(DimADList[AD_Name])"
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[AD_Code])"
           },
           {
             "type": "calculated",
@@ -110,6 +110,41 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "RELATED(DimTerritory[Territory])"
+          },
+          {
+            "type": "calculated",
+            "name": "L0Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[L0])"
+          },
+          {
+            "type": "calculated",
+            "name": "L1Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[L1])"
+          },
+          {
+            "type": "calculated",
+            "name": "L2Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[L2])"
+          },
+          {
+            "type": "calculated",
+            "name": "L3 Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[L3])"
+          },
+          {
+            "type": "calculated",
+            "name": "L4Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "lookupvalue(DimADList[AD_Name],DimADList[AD_Code],AD[L4])"
           }
         ],
         "partitions": [
@@ -763,68 +798,6 @@
               "  <IsSortDescending>false</IsSortDescending>",
               "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
             ]
-          }
-        ]
-      },
-      {
-        "name": "DW_AD_Office_Code",
-        "isHidden": true,
-        "columns": [
-          {
-            "name": "AD_Code",
-            "dataType": "string",
-            "sourceColumn": "AD_Code",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "AD_Name",
-            "dataType": "string",
-            "sourceColumn": "AD_Name",
-            "sourceProviderType": "WChar"
-          },
-          {
-            "name": "Office_Code",
-            "dataType": "string",
-            "sourceColumn": "Office_Code",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "ID",
-            "dataType": "string",
-            "sourceColumn": "ID",
-            "sourceProviderType": "Char"
-          },
-          {
-            "type": "calculated",
-            "name": "Office Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "lookupvalue(DimOffice[Office_Name],DimOffice[Office_Code],DW_AD_Office_Code[Office_Code])"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "DW_AD_Office_Code",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [DPO].[DW_AD_Office_Code].* FROM [DPO].[DW_AD_Office_Code] ",
-              "dataSource": "SqlServer 10.9.2.70product PowerBI"
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[DW_AD_Office_Code].* FROM [DPO].[DW_AD_Office_Code] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "DW_AD_Office_Code"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "DPO"
           }
         ]
       },
@@ -2074,7 +2047,7 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "isHidden": true,
-            "expression": "SWITCH(DimADList[AD_Code],\"AD367\",\"PHUHUNGLIFE\\vagy0566\",\"AD102\",\"PHUHUNGLIFE\\vagy0225\",\"AD324\",\"PHUHUNGLIFE\\vagy0567\",\"AD179\",\"PHUHUNGLIFE\\vagy0332\",\"AD213\",\"PHUHUNGLIFE\\vpns0117\",\"AD088\",\"PHUHUNGLIFE\\vagy0188\",\"AD226\",\"PHUHUNGLIFE\\vagy0402\",\"AD507\",\"PHUHUNGLIFE\\vagy0743\",\"AD421\",\"PHUHUNGLIFE\\vagy0693\",\"AD098\",\"PHUHUNGLIFE\\vagy0215\",\"AD223\",\"PHUHUNGLIFE\\vagy0395\")"
+            "expression": "SWITCH(DimADList[AD_Code],\"AD367\",\"PHUHUNGLIFE\\vagy0566\",\"AD102\",\"PHUHUNGLIFE\\vagy0225\",\"AD324\",\"PHUHUNGLIFE\\vagy0567\",\"AD179\",\"PHUHUNGLIFE\\vagy0332\",\"AD213\",\"PHUHUNGLIFE\\vpns0117\",\"AD088\",\"PHUHUNGLIFE\\vagy0188\",\"AD226\",\"PHUHUNGLIFE\\vagy0402\",\"AD507\",\"PHUHUNGLIFE\\vagy0743\",\"AD421\",\"PHUHUNGLIFE\\vagy0693\",\"AD098\",\"PHUHUNGLIFE\\vagy0215\",\"AD223\",\"PHUHUNGLIFE\\vagy0395\",\"AD127\",\"PHUHUNGLIFE\\vagy0261\", \"AD138\", \"PHUHUNGLIFE\\vagy0200\", \"AD158\",\"PHUHUNGLIFE\\vagy0302\",\"AD163\",\"PHUHUNGLIFE\\vagy0308\",\"AD194\",\"PHUHUNGLIFE\\vagy0654\",\"AD212\",\"PHUHUNGLIFE\\vagy0383\",\"AD194\",\"PHUHUNGLIFE\\vagy0654\",\"AD212\",\"PHUHUNGLIFE\\vagy0383\",\"AD218\",\"PHUHUNGLIFE\\vagy0392\",\"AD230\",\"PHUHUNGLIFE\\vagy0407\",\"AD233\", \"PHUHUNGLIFE\\vagy0415\", \"AD242\", \"PHUHUNGLIFE\\vagy0421\",\"AD246\", \"PHUHUNGLIFE\\vagy0425\", \"AD248\",\"PHUHUNGLIFE\\vagy0430\",\"AD254\", \"PHUHUNGLIFE\\vagy0435\", \"AD275\",\"PHUHUNGLIFE\\vagy0469\",\"AD296\",\"PHUHUNGLIFE\\vagy0500\",\"AD326\",\"PHUHUNGLIFE\\vagy0568\",\"AD327\",\"PHUHUNGLIFE\\vagy0569\",\"AD342\",\"PHUHUNGLIFE\\vagy0533\",\"AD358\",\"PHUHUNGLIFE\\vagy0560\",\"AD359\",\"PHUHUNGLIFE\\vagy0559\",\"AD361\",\"PHUHUNGLIFE\\vagy0576\",\"AD369\",\"PHUHUNGLIFE\\vagy0585\",\"AD380\",\"PHUHUNGLIFE\\vagy0635\",\"AD384\",\"PHUHUNGLIFE\\vagy0609\",\"AD391\",\"PHUHUNGLIFE\\vagy0616\",\"AD400\",\"PHUHUNGLIFE\\vagy0624\",\"AD412\",\"PHUHUNGLIFE\\vagy0666\",\"AD413\",\"PHUHUNGLIFE\\vagy0641\",\"AD429\",\"PHUHUNGLIFE\\vagy0655\",\"AD432\",\"PHUHUNGLIFE\\vagy0683\",\"AD433\",\"PHUHUNGLIFE\\vagy0718\",\"AD445\",\"PHUHUNGLIFE\\vagy0674\",\"AD465\",\"PHUHUNGLIFE\\vagy0709\",\"AD479\",\"PHUHUNGLIFE\\vagy0715\",\"AD482\",\"PHUHUNGLIFE\\vagy0719\",\"AD488\",\"PHUHUNGLIFE\\vagy0701\",\"AD499\",\"PHUHUNGLIFE\\vagy0735\",\"AD505\",\"PHUHUNGLIFE\\vagy0742\")"
           }
         ],
         "partitions": [
@@ -5044,22 +5017,6 @@
     ],
     "relationships": [
       {
-        "name": "00ddfcd6-b4a5-4250-ba09-cea15806023d",
-        "fromTable": "AD",
-        "fromColumn": "AD_Code",
-        "toTable": "DimADList",
-        "toColumn": "AD_Code",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "3fecc542-1238-4bf6-8694-b79067b6a361",
-        "fromTable": "DW_AD_Office_Code",
-        "fromColumn": "AD_Code",
-        "toTable": "DimADList",
-        "toColumn": "AD_Code",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "af8c3bdc-2699-4288-93a0-2e22c2f5efb3",
         "fromTable": "DimTransactionCS",
         "fromColumn": "KeyADTime",
@@ -5148,7 +5105,7 @@
           },
           {
             "name": "AD",
-            "filterExpression": "PATHCONTAINS(AD[structure],LOOKUPVALUE(AD[AD_Code],DimADList[ADUsername],USERNAME()))"
+            "filterExpression": "PATHCONTAINS(AD[structure],LOOKUPVALUE(DimADList[AD_Code], DimADList[ADUsername], USERNAME()))"
           }
         ]
       },
@@ -5312,7 +5269,7 @@
         "tablePermissions": [
           {
             "name": "AD",
-            "filterExpression": "PATHCONTAINS(AD[structure],LOOKUPVALUE(AD[AD_Code],DimADList[ADUsername],USERNAME()))"
+            "filterExpression": "PATHCONTAINS(AD[structure],LOOKUPVALUE(DimADList[AD_Code], DimADList[ADUsername], USERNAME()))"
           },
           {
             "name": "DimADList",
