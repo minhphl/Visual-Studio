@@ -776,7 +776,6 @@
           {
             "name": "Date",
             "dataType": "dateTime",
-            "isHidden": true,
             "isKey": true,
             "sourceColumn": "Date",
             "formatString": "yyyy-MM-dd",
@@ -1597,10 +1596,16 @@
             "sourceProviderType": "Char"
           },
           {
+            "name": "Area Code",
+            "dataType": "string",
+            "sourceColumn": "Area Code"
+          },
+          {
+            "type": "calculated",
             "name": "FYPincTopup",
-            "dataType": "int64",
-            "sourceColumn": "FYPincTopup",
-            "formatString": "#,0"
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "Cal_AD_Premium[FYP]+ Cal_AD_Premium[Topup]*0.1"
           }
         ],
         "partitions": [
@@ -1609,7 +1614,7 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] ",
+              "query": " SELECT [DPO].[Cal_AD_Premium].* FROM [DPO].[Cal_AD_Premium] ",
               "dataSource": "SqlServer 10.9.2.70 PowerBI"
             },
             "annotations": [
@@ -1699,10 +1704,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>FYPincTopup</string>",
+                  "        <string>Area Code</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>132</int>",
+                  "        <int>113</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -1805,10 +1810,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>FYPincTopup</string>",
+                  "        <string>Area Code</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>9</int>",
+                  "        <int>12</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -1816,7 +1821,7 @@
                   "        <string>AFYP</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>10</int>",
+                  "        <int>9</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -1824,7 +1829,7 @@
                   "        <string>AD_Code</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>11</int>",
+                  "        <int>10</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -1832,7 +1837,7 @@
                   "        <string>ID</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>12</int>",
+                  "        <int>11</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnDisplayIndex>",
@@ -1840,7 +1845,7 @@
                   "  <ColumnChecked>",
                   "    <item>",
                   "      <key>",
-                  "        <string>FYPincTopup</string>",
+                  "        <string>Area Code</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -1952,11 +1957,11 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[Cal_ADpremium].* FROM [DPO].[Cal_ADpremium] "
+            "value": " SELECT [DPO].[Cal_AD_Premium].* FROM [DPO].[Cal_AD_Premium] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "Cal_ADpremium"
+            "value": "Cal_AD_Premium"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -2048,10 +2053,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>FYPincTopup</string>",
+              "        <string>Area Code</string>",
               "      </key>",
               "      <value>",
-              "        <int>132</int>",
+              "        <int>113</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -2154,10 +2159,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>FYPincTopup</string>",
+              "        <string>Area Code</string>",
               "      </key>",
               "      <value>",
-              "        <int>9</int>",
+              "        <int>12</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -2165,7 +2170,7 @@
               "        <string>AFYP</string>",
               "      </key>",
               "      <value>",
-              "        <int>10</int>",
+              "        <int>9</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -2173,7 +2178,7 @@
               "        <string>AD_Code</string>",
               "      </key>",
               "      <value>",
-              "        <int>11</int>",
+              "        <int>10</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -2181,7 +2186,7 @@
               "        <string>ID</string>",
               "      </key>",
               "      <value>",
-              "        <int>12</int>",
+              "        <int>11</int>",
               "      </value>",
               "    </item>",
               "  </ColumnDisplayIndex>",
@@ -2189,7 +2194,7 @@
               "  <ColumnChecked>",
               "    <item>",
               "      <key>",
-              "        <string>FYPincTopup</string>",
+              "        <string>Area Code</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -2998,15 +3003,21 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] ",
+              "query": "SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD]",
               "dataSource": "SqlServer 10.9.2.70 PowerBI"
-            }
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD] "
+            "value": "SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD]"
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -3015,6 +3026,10 @@
           {
             "name": "_TM_ExtProp_DbSchemaName",
             "value": "DPO"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[Target_AD].* FROM [DPO].[Target_AD]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
           }
         ]
       },
@@ -3055,35 +3070,30 @@
           {
             "name": "L0",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "L0",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L1",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "L1",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L2",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "L2",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L3",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "L3",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L4",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "L4",
             "sourceProviderType": "WChar"
           },
@@ -3197,6 +3207,18 @@
             ]
           }
         ],
+        "measures": [
+          {
+            "name": "Remove blanks",
+            "expression": [
+              " SWITCH(TRUE(),",
+              "AND(ISINSCOPE(FactADHistory[L1]),ISBLANK(VALUES(FactADHistory[L1]))),BLANK(),",
+              "AND(ISINSCOPE(FactADHistory[L2]),ISBLANK(VALUES(FactADHistory[L2]))),BLANK(),",
+              "AND(ISINSCOPE(FactADHistory[L3]),ISBLANK(VALUES(FactADHistory[L3]))),BLANK(),",
+              "AND(ISINSCOPE(FactADHistory[L4]),ISBLANK(VALUES(FactADHistory[L4]))),BLANK(),1)"
+            ]
+          }
+        ],
         "hierarchies": [
           {
             "name": "Hierarchy ADName",
@@ -3255,6 +3277,36 @@
                 "name": "L4new",
                 "ordinal": 4,
                 "column": "L4new"
+              }
+            ]
+          },
+          {
+            "name": "Hierarchy",
+            "levels": [
+              {
+                "name": "L0",
+                "ordinal": 0,
+                "column": "L0"
+              },
+              {
+                "name": "L2",
+                "ordinal": 2,
+                "column": "L2"
+              },
+              {
+                "name": "L1",
+                "ordinal": 1,
+                "column": "L1"
+              },
+              {
+                "name": "L3",
+                "ordinal": 3,
+                "column": "L3"
+              },
+              {
+                "name": "L4",
+                "ordinal": 4,
+                "column": "L4"
               }
             ]
           }
@@ -3718,6 +3770,16 @@
             "dataType": "string",
             "sourceColumn": "ID",
             "sourceProviderType": "Char"
+          },
+          {
+            "name": "SALEOFFICE",
+            "dataType": "string",
+            "sourceColumn": "SALEOFFICE"
+          },
+          {
+            "name": "DESCRIPTON PENDING DOC",
+            "dataType": "string",
+            "sourceColumn": "DESCRIPTON PENDING DOC"
           }
         ],
         "partitions": [
@@ -3838,6 +3900,22 @@
                   "        <int>56</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SALEOFFICE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>129</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DESCRIPTON PENDING DOC</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>247</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnWidths>",
                   "  <ColumnDisplayIndex>",
                   "    <item>",
@@ -3936,9 +4014,42 @@
                   "        <int>11</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SALEOFFICE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DESCRIPTON PENDING DOC</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
-                  "  <ColumnChecked />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SALEOFFICE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DESCRIPTON PENDING DOC</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
                   "  <ColumnFilter>",
                   "    <item>",
                   "      <key>",
@@ -4097,6 +4208,22 @@
               "        <int>56</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SALEOFFICE</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>129</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DESCRIPTON PENDING DOC</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>247</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnWidths>",
               "  <ColumnDisplayIndex>",
               "    <item>",
@@ -4195,9 +4322,42 @@
               "        <int>11</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SALEOFFICE</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DESCRIPTON PENDING DOC</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnDisplayIndex>",
               "  <ColumnFrozen />",
-              "  <ColumnChecked />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>SALEOFFICE</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DESCRIPTON PENDING DOC</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
               "  <ColumnFilter>",
               "    <item>",
               "      <key>",
