@@ -1136,7 +1136,7 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] ",
+              "query": " SELECT [DPO].[vCS_APPLICATION_PREMIUM].* FROM [DPO].[vCS_APPLICATION_PREMIUM] ",
               "dataSource": "SqlServer 10.9.2.70product PowerBI"
             },
             "annotations": [
@@ -1481,7 +1481,7 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[vCS_APPLICATION_PREMIUM].* FROM [dbo].[vCS_APPLICATION_PREMIUM] "
+            "value": " SELECT [DPO].[vCS_APPLICATION_PREMIUM].* FROM [DPO].[vCS_APPLICATION_PREMIUM] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -1489,7 +1489,7 @@
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
+            "value": "DPO"
           },
           {
             "name": "TableWidgetSerialization",
@@ -5308,6 +5308,30 @@
           {
             "memberName": "PHUHUNGLIFE\\vagy0561",
             "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2586"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "DimADList",
+            "filterExpression": "FALSE()"
+          }
+        ]
+      },
+      {
+        "name": "CS Team",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "PHUHUNGLIFE\\vops0178",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3279"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vops0200",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2229"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vops0293",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6249"
           }
         ],
         "tablePermissions": [
