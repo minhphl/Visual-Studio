@@ -1022,17 +1022,14 @@
             "sourceProviderType": "Char"
           },
           {
-            "name": "AD_Name",
-            "dataType": "string",
-            "sourceColumn": "AD_Name",
-            "sourceProviderType": "WChar"
-          },
-          {
-            "type": "calculated",
             "name": "ADUsername",
             "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "SWITCH(DimADSecurity[AD_Code],\"AD367\",\"PHUHUNGLIFE\\vagy0566\",\"AD102\",\"PHUHUNGLIFE\\vagy0225\",\"AD324\",\"PHUHUNGLIFE\\vagy0567\",\"AD179\",\"PHUHUNGLIFE\\vagy0332\",\"AD213\",\"PHUHUNGLIFE\\vpns0117\",\"AD088\",\"PHUHUNGLIFE\\vagy0188\",\"AD226\",\"PHUHUNGLIFE\\vagy0402\",\"AD507\",\"PHUHUNGLIFE\\vagy0743\",\"AD421\",\"PHUHUNGLIFE\\vagy0693\",\"AD098\",\"PHUHUNGLIFE\\vagy0215\",\"AD223\",\"PHUHUNGLIFE\\vagy0395\",\"AD127\",\"PHUHUNGLIFE\\vagy0261\", \"AD138\", \"PHUHUNGLIFE\\vagy0200\", \"AD158\",\"PHUHUNGLIFE\\vagy0302\",\"AD163\",\"PHUHUNGLIFE\\vagy0308\",\"AD194\",\"PHUHUNGLIFE\\vagy0654\",\"AD212\",\"PHUHUNGLIFE\\vagy0383\",\"AD194\",\"PHUHUNGLIFE\\vagy0654\",\"AD212\",\"PHUHUNGLIFE\\vagy0383\",\"AD218\",\"PHUHUNGLIFE\\vagy0392\",\"AD230\",\"PHUHUNGLIFE\\vagy0407\",\"AD233\", \"PHUHUNGLIFE\\vagy0415\", \"AD242\", \"PHUHUNGLIFE\\vagy0421\",\"AD246\", \"PHUHUNGLIFE\\vagy0425\", \"AD248\",\"PHUHUNGLIFE\\vagy0430\",\"AD254\", \"PHUHUNGLIFE\\vagy0435\", \"AD275\",\"PHUHUNGLIFE\\vagy0469\",\"AD296\",\"PHUHUNGLIFE\\vagy0500\",\"AD326\",\"PHUHUNGLIFE\\vagy0568\",\"AD327\",\"PHUHUNGLIFE\\vagy0569\",\"AD342\",\"PHUHUNGLIFE\\vagy0533\",\"AD358\",\"PHUHUNGLIFE\\vagy0560\",\"AD359\",\"PHUHUNGLIFE\\vagy0559\",\"AD361\",\"PHUHUNGLIFE\\vagy0576\",\"AD369\",\"PHUHUNGLIFE\\vagy0585\",\"AD380\",\"PHUHUNGLIFE\\vagy0635\",\"AD384\",\"PHUHUNGLIFE\\vagy0609\",\"AD391\",\"PHUHUNGLIFE\\vagy0616\",\"AD400\",\"PHUHUNGLIFE\\vagy0624\",\"AD412\",\"PHUHUNGLIFE\\vagy0666\",\"AD413\",\"PHUHUNGLIFE\\vagy0641\",\"AD429\",\"PHUHUNGLIFE\\vagy0655\",\"AD432\",\"PHUHUNGLIFE\\vagy0683\",\"AD433\",\"PHUHUNGLIFE\\vagy0718\",\"AD445\",\"PHUHUNGLIFE\\vagy0674\",\"AD465\",\"PHUHUNGLIFE\\vagy0709\",\"AD479\",\"PHUHUNGLIFE\\vagy0715\",\"AD482\",\"PHUHUNGLIFE\\vagy0719\",\"AD488\",\"PHUHUNGLIFE\\vagy0701\",\"AD499\",\"PHUHUNGLIFE\\vagy0735\",\"AD505\",\"PHUHUNGLIFE\\vagy0742\")"
+            "sourceColumn": "ADUsername"
+          },
+          {
+            "name": "AD_Name",
+            "dataType": "string",
+            "sourceColumn": "AD_Name"
           }
         ],
         "partitions": [
@@ -1041,9 +1038,15 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] ",
+              "query": "SELECT [DPO].[AD_Security].* FROM [DPO].[AD_Security]",
               "dataSource": "SqlServer 10.9.2.70 PowerBI"
-            }
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[AD_Security].* FROM [DPO].[AD_Security]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
           }
         ],
         "measures": [
@@ -1055,15 +1058,19 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[DW_AD].* FROM [DPO].[DW_AD] "
+            "value": "SELECT [DPO].[AD_Security].* FROM [DPO].[AD_Security]"
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "DW_AD"
+            "value": "AD_Security"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
             "value": "DPO"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[AD_Security].* FROM [DPO].[AD_Security]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
           }
         ]
       },
@@ -3116,119 +3123,55 @@
             ]
           },
           {
-            "name": "L0",
-            "dataType": "string",
-            "sourceColumn": "L0",
-            "sourceProviderType": "WChar"
-          },
-          {
             "name": "L1",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L1",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L2",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L2",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L3",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L3",
             "sourceProviderType": "WChar"
           },
           {
             "name": "L4",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L4",
             "sourceProviderType": "WChar"
           },
           {
-            "type": "calculated",
-            "name": "KeyADTime",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "FactADHistory[AD_Code] & FORMAT ( FactADHistory[ExplodedDate], \"YYYYMMDD\" )"
-          },
-          {
-            "type": "calculated",
-            "name": "L0Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "IF(or(FactADHistory[L0new] =\"PHL\", FactADHistory[Territory_Code] = \"PHL\"),\"Not Assigned\",LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L0new]))"
-          },
-          {
-            "type": "calculated",
-            "name": "L1Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "IF(OR(FactADHistory[L0new] =\"PHL\", FactADHistory[Territory_Code] = \"PHL\"), \"Not Assigned\",LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L1new]))"
-          },
-          {
-            "type": "calculated",
-            "name": "L2Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "IF( OR(FactADHistory[L0new] =\"PHL\", FactADHistory[Territory_Code] = \"PHL\"), \"Not Assigned\",LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L2new]))"
-          },
-          {
-            "type": "calculated",
-            "name": "L3Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "IF(OR(FactADHistory[L0new] =\"PHL\", FactADHistory[Territory_Code] = \"PHL\"), \"Not Assigned\",LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L3new]))"
-          },
-          {
-            "type": "calculated",
-            "name": "L4Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "IF(OR(FactADHistory[L4new] =\"PHL\",FactADHistory[AD_Code] = \"ADNUL\"), \"Unallocated\",LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[L4new]))"
-          },
-          {
-            "type": "calculated",
-            "name": "AD_Name",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[AD_Code])"
-          },
-          {
-            "name": "L0new",
-            "dataType": "string",
-            "sourceColumn": "L0new"
-          },
-          {
-            "type": "calculated",
-            "name": "SEName",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "LOOKUPVALUE(DimAD2[AD_Name],DimAD2[AD_Code],FactADHistory[SE])"
-          },
-          {
-            "name": "SE",
-            "dataType": "string",
-            "sourceColumn": "SE"
-          },
-          {
             "name": "L1new",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L1new"
           },
           {
             "name": "L2new",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L2new"
           },
           {
             "name": "L3new",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L3new"
           },
           {
             "name": "L4new",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "L4new"
           },
           {
@@ -3237,6 +3180,68 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "RELATED(DimTerritory[Territory])"
+          },
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID"
+          },
+          {
+            "name": "AD_Grade",
+            "dataType": "string",
+            "sourceColumn": "AD_Grade"
+          },
+          {
+            "name": "CDOIndex",
+            "dataType": "int64",
+            "sourceColumn": "CDOIndex"
+          },
+          {
+            "name": "L5new",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L5new"
+          },
+          {
+            "name": "L5",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L5"
+          },
+          {
+            "name": "ADName",
+            "dataType": "string",
+            "sourceColumn": "ADName"
+          },
+          {
+            "name": "L1Name",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L1Name"
+          },
+          {
+            "name": "L2Name",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L2Name"
+          },
+          {
+            "name": "L3Name",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L3Name"
+          },
+          {
+            "name": "L4Name",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L4Name"
+          },
+          {
+            "name": "L5Name",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "L5Name"
           }
         ],
         "partitions": [
@@ -3244,13 +3249,67 @@
             "name": "FactADHistory",
             "source": {
               "type": "query",
-              "query": "SELECT [DPO].[AD5].* FROM [DPO].[AD5]",
+              "query": [
+                "SELECT",
+                "  DPO.AD0.ID",
+                "  ,DPO.AD0.AD_Code",
+                "  ,DPO.AD0.AD_Grade",
+                "  ,DPO.AD0.Territory_Code",
+                "  ,DPO.AD0.ExplodedDate",
+                "  ,DPO.AD0.CDOIndex",
+                "  ,DPO.AD0.L1new",
+                "  ,DPO.AD0.L2new",
+                "  ,DPO.AD0.L3new",
+                "  ,DPO.AD0.L4new",
+                "  ,DPO.AD0.L5new",
+                "  ,DPO.AD0.L1",
+                "  ,DPO.AD0.L2",
+                "  ,DPO.AD0.L3",
+                "  ,DPO.AD0.L4",
+                "  ,DPO.AD0.L5",
+                "  ,DPO.AD0.ADName",
+                "  ,DPO.AD0.L1Name",
+                "  ,DPO.AD0.L2Name",
+                "  ,DPO.AD0.L3Name",
+                "  ,DPO.AD0.L4Name",
+                "  ,DPO.AD0.L5Name",
+                "  ,DPO.AD0.[Structure]",
+                "FROM",
+                "  DPO.AD0"
+              ],
               "dataSource": "SqlServer 10.9.2.70 PowerBI"
             },
             "annotations": [
               {
                 "name": "QueryEditorSerialization",
-                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[AD5].* FROM [DPO].[AD5]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT",
+                  "  DPO.AD0.ID",
+                  "  ,DPO.AD0.AD_Code",
+                  "  ,DPO.AD0.AD_Grade",
+                  "  ,DPO.AD0.Territory_Code",
+                  "  ,DPO.AD0.ExplodedDate",
+                  "  ,DPO.AD0.CDOIndex",
+                  "  ,DPO.AD0.L1new",
+                  "  ,DPO.AD0.L2new",
+                  "  ,DPO.AD0.L3new",
+                  "  ,DPO.AD0.L4new",
+                  "  ,DPO.AD0.L5new",
+                  "  ,DPO.AD0.L1",
+                  "  ,DPO.AD0.L2",
+                  "  ,DPO.AD0.L3",
+                  "  ,DPO.AD0.L4",
+                  "  ,DPO.AD0.L5",
+                  "  ,DPO.AD0.ADName",
+                  "  ,DPO.AD0.L1Name",
+                  "  ,DPO.AD0.L2Name",
+                  "  ,DPO.AD0.L3Name",
+                  "  ,DPO.AD0.L4Name",
+                  "  ,DPO.AD0.L5Name",
+                  "  ,DPO.AD0.[Structure]",
+                  "FROM",
+                  "  DPO.AD0</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState><DesignerState><UseGenericDesigner>false</UseGenericDesigner><InternalDesignerState><QueryDefinition xmlns=\"http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational\"><SelectedColumns><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ID\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"AD_Code\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"AD_Grade\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"Territory_Code\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ExplodedDate\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"CDOIndex\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ADName\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"Structure\" /></SelectedColumns></QueryDefinition></InternalDesignerState></DesignerState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
               }
             ]
           }
@@ -3260,29 +3319,59 @@
             "name": "Hierarchy ADName",
             "levels": [
               {
-                "name": "L0Name",
-                "ordinal": 0,
-                "column": "L0Name"
-              },
-              {
                 "name": "L1Name",
-                "ordinal": 1,
+                "ordinal": 0,
                 "column": "L1Name"
               },
               {
                 "name": "L2Name",
-                "ordinal": 2,
+                "ordinal": 1,
                 "column": "L2Name"
               },
               {
                 "name": "L3Name",
-                "ordinal": 3,
+                "ordinal": 2,
                 "column": "L3Name"
               },
               {
                 "name": "L4Name",
-                "ordinal": 4,
+                "ordinal": 3,
                 "column": "L4Name"
+              },
+              {
+                "name": "L5Name",
+                "ordinal": 4,
+                "column": "L5Name"
+              }
+            ]
+          },
+          {
+            "name": "Hierarchy ADCodeP",
+            "levels": [
+              {
+                "name": "L1new",
+                "ordinal": 0,
+                "column": "L1new"
+              },
+              {
+                "name": "L2new",
+                "ordinal": 1,
+                "column": "L2new"
+              },
+              {
+                "name": "L3new",
+                "ordinal": 2,
+                "column": "L3new"
+              },
+              {
+                "name": "L4new",
+                "ordinal": 3,
+                "column": "L4new"
+              },
+              {
+                "name": "L5new",
+                "ordinal": 4,
+                "column": "L5new"
               }
             ]
           },
@@ -3290,59 +3379,29 @@
             "name": "Hierarchy ADCode",
             "levels": [
               {
-                "name": "L0",
-                "ordinal": 0,
-                "column": "L0"
-              },
-              {
-                "name": "L1new",
-                "ordinal": 1,
-                "column": "L1new"
-              },
-              {
-                "name": "L2new",
-                "ordinal": 2,
-                "column": "L2new"
-              },
-              {
-                "name": "L3new",
-                "ordinal": 3,
-                "column": "L3new"
-              },
-              {
-                "name": "L4new",
-                "ordinal": 4,
-                "column": "L4new"
-              }
-            ]
-          },
-          {
-            "name": "Hierarchy",
-            "levels": [
-              {
-                "name": "L0",
-                "ordinal": 0,
-                "column": "L0"
-              },
-              {
                 "name": "L2",
-                "ordinal": 2,
+                "ordinal": 1,
                 "column": "L2"
               },
               {
                 "name": "L1",
-                "ordinal": 1,
+                "ordinal": 0,
                 "column": "L1"
               },
               {
                 "name": "L3",
-                "ordinal": 3,
+                "ordinal": 2,
                 "column": "L3"
               },
               {
                 "name": "L4",
-                "ordinal": 4,
+                "ordinal": 3,
                 "column": "L4"
+              },
+              {
+                "name": "L5",
+                "ordinal": 4,
+                "column": "L5"
               }
             ]
           }
@@ -3350,7 +3409,34 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": "SELECT [DPO].[AD5].* FROM [DPO].[AD5]"
+            "value": [
+              "SELECT",
+              "  DPO.AD0.ID",
+              "  ,DPO.AD0.AD_Code",
+              "  ,DPO.AD0.AD_Grade",
+              "  ,DPO.AD0.Territory_Code",
+              "  ,DPO.AD0.ExplodedDate",
+              "  ,DPO.AD0.CDOIndex",
+              "  ,DPO.AD0.L1new",
+              "  ,DPO.AD0.L2new",
+              "  ,DPO.AD0.L3new",
+              "  ,DPO.AD0.L4new",
+              "  ,DPO.AD0.L5new",
+              "  ,DPO.AD0.L1",
+              "  ,DPO.AD0.L2",
+              "  ,DPO.AD0.L3",
+              "  ,DPO.AD0.L4",
+              "  ,DPO.AD0.L5",
+              "  ,DPO.AD0.ADName",
+              "  ,DPO.AD0.L1Name",
+              "  ,DPO.AD0.L2Name",
+              "  ,DPO.AD0.L3Name",
+              "  ,DPO.AD0.L4Name",
+              "  ,DPO.AD0.L5Name",
+              "  ,DPO.AD0.[Structure]",
+              "FROM",
+              "  DPO.AD0"
+            ]
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -3362,7 +3448,34 @@
           },
           {
             "name": "QueryEditorSerialization",
-            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [DPO].[AD5].* FROM [DPO].[AD5]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT",
+              "  DPO.AD0.ID",
+              "  ,DPO.AD0.AD_Code",
+              "  ,DPO.AD0.AD_Grade",
+              "  ,DPO.AD0.Territory_Code",
+              "  ,DPO.AD0.ExplodedDate",
+              "  ,DPO.AD0.CDOIndex",
+              "  ,DPO.AD0.L1new",
+              "  ,DPO.AD0.L2new",
+              "  ,DPO.AD0.L3new",
+              "  ,DPO.AD0.L4new",
+              "  ,DPO.AD0.L5new",
+              "  ,DPO.AD0.L1",
+              "  ,DPO.AD0.L2",
+              "  ,DPO.AD0.L3",
+              "  ,DPO.AD0.L4",
+              "  ,DPO.AD0.L5",
+              "  ,DPO.AD0.ADName",
+              "  ,DPO.AD0.L1Name",
+              "  ,DPO.AD0.L2Name",
+              "  ,DPO.AD0.L3Name",
+              "  ,DPO.AD0.L4Name",
+              "  ,DPO.AD0.L5Name",
+              "  ,DPO.AD0.[Structure]",
+              "FROM",
+              "  DPO.AD0</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState><DesignerState><UseGenericDesigner>false</UseGenericDesigner><InternalDesignerState><QueryDefinition xmlns=\"http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational\"><SelectedColumns><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ID\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"AD_Code\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"AD_Grade\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"Territory_Code\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ExplodedDate\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"CDOIndex\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5new\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"ADName\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L1Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L2Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L3Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L4Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"L5Name\" /><ColumnExpression Schema=\"DPO\" ColumnOwner=\"AD0\" ColumnName=\"Structure\" /></SelectedColumns></QueryDefinition></InternalDesignerState></DesignerState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
           }
         ]
       },
@@ -3505,18 +3618,6 @@
             "sourceProviderType": "WChar"
           },
           {
-            "name": "TERRITORY",
-            "dataType": "string",
-            "sourceColumn": "TERRITORY",
-            "sourceProviderType": "WChar"
-          },
-          {
-            "name": "AD_OFFICE",
-            "dataType": "string",
-            "sourceColumn": "AD_OFFICE",
-            "sourceProviderType": "Char"
-          },
-          {
             "type": "calculated",
             "name": "ID",
             "dataType": "string",
@@ -3530,7 +3631,7 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [DPO].[vCS_APPLICATION_PREMIUM].* FROM [DPO].[vCS_APPLICATION_PREMIUM] ",
+              "query": " SELECT [dbo].[CS_APPLICATION_PREMIUM].[APPLICATION_NO],[dbo].[CS_APPLICATION_PREMIUM].[AGENT_CODE],[dbo].[CS_APPLICATION_PREMIUM].[INSTALMENT_PREMIUM],[dbo].[CS_APPLICATION_PREMIUM].[FREQUENCY],[dbo].[CS_APPLICATION_PREMIUM].[PO_NAME],[dbo].[CS_APPLICATION_PREMIUM].[PAYMENT_METHOD],[dbo].[CS_APPLICATION_PREMIUM].[CREATED_DATE],[dbo].[CS_APPLICATION_PREMIUM].[FULLNAME],[dbo].[CS_APPLICATION_PREMIUM].[TRANS_DATE],[dbo].[CS_APPLICATION_PREMIUM].[COMMENTS],[dbo].[CS_APPLICATION_PREMIUM].[CHANNEL],[dbo].[CS_APPLICATION_PREMIUM].[AD_CODE],[dbo].[CS_APPLICATION_PREMIUM].[AD_NAME] FROM [dbo].[CS_APPLICATION_PREMIUM] ",
               "dataSource": "SqlServer 10.9.2.70 PowerBI"
             },
             "annotations": [
@@ -3652,18 +3753,18 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>TERRITORY</string>",
+                  "        <string>UPDATED_DATE</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>126</int>",
+                  "        <int>161</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>AD_OFFICE</string>",
+                  "        <string>DELETED_DATE</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>123</int>",
+                  "        <int>156</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnWidths>",
@@ -3774,23 +3875,40 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>TERRITORY</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>13</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>AD_OFFICE</string>",
+                  "        <string>UPDATED_DATE</string>",
                   "      </key>",
                   "      <value>",
                   "        <int>14</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DELETED_DATE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
-                  "  <ColumnChecked />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DELETED_DATE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>false</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>UPDATED_DATE</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>false</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
                   "  <ColumnFilter />",
                   "  <SelectionFilter />",
                   "  <FilterParameters />",
@@ -3814,15 +3932,15 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[vCS_APPLICATION_PREMIUM].* FROM [DPO].[vCS_APPLICATION_PREMIUM] "
+            "value": " SELECT [dbo].[CS_APPLICATION_PREMIUM].[APPLICATION_NO],[dbo].[CS_APPLICATION_PREMIUM].[AGENT_CODE],[dbo].[CS_APPLICATION_PREMIUM].[INSTALMENT_PREMIUM],[dbo].[CS_APPLICATION_PREMIUM].[FREQUENCY],[dbo].[CS_APPLICATION_PREMIUM].[PO_NAME],[dbo].[CS_APPLICATION_PREMIUM].[PAYMENT_METHOD],[dbo].[CS_APPLICATION_PREMIUM].[CREATED_DATE],[dbo].[CS_APPLICATION_PREMIUM].[FULLNAME],[dbo].[CS_APPLICATION_PREMIUM].[TRANS_DATE],[dbo].[CS_APPLICATION_PREMIUM].[COMMENTS],[dbo].[CS_APPLICATION_PREMIUM].[CHANNEL],[dbo].[CS_APPLICATION_PREMIUM].[AD_CODE],[dbo].[CS_APPLICATION_PREMIUM].[AD_NAME] FROM [dbo].[CS_APPLICATION_PREMIUM] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vCS_APPLICATION_PREMIUM"
+            "value": "CS_APPLICATION_PREMIUM"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
-            "value": "DPO"
+            "value": "dbo"
           },
           {
             "name": "TableWidgetSerialization",
@@ -3942,18 +4060,18 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>TERRITORY</string>",
+              "        <string>UPDATED_DATE</string>",
               "      </key>",
               "      <value>",
-              "        <int>126</int>",
+              "        <int>161</int>",
               "      </value>",
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>AD_OFFICE</string>",
+              "        <string>DELETED_DATE</string>",
               "      </key>",
               "      <value>",
-              "        <int>123</int>",
+              "        <int>156</int>",
               "      </value>",
               "    </item>",
               "  </ColumnWidths>",
@@ -4064,23 +4182,40 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>TERRITORY</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>13</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>AD_OFFICE</string>",
+              "        <string>UPDATED_DATE</string>",
               "      </key>",
               "      <value>",
               "        <int>14</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DELETED_DATE</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnDisplayIndex>",
               "  <ColumnFrozen />",
-              "  <ColumnChecked />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>DELETED_DATE</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>false</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>UPDATED_DATE</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>false</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
               "  <ColumnFilter />",
               "  <SelectionFilter />",
               "  <FilterParameters />",
@@ -5653,39 +5788,11 @@
         "crossFilteringBehavior": "bothDirections"
       },
       {
-        "name": "59f13814-5bef-49e7-8cde-320b81dea917",
-        "fromTable": "Target_AD",
-        "fromColumn": "AD Code",
-        "toTable": "DimAD",
-        "toColumn": "AD_Code"
-      },
-      {
         "name": "672fbe47-4ca5-44db-b7f9-119cda1178cb",
         "fromTable": "FactADHistory",
         "fromColumn": "ExplodedDate",
         "toTable": "DimDate",
         "toColumn": "Date"
-      },
-      {
-        "name": "28628c65-0d65-44e9-ae01-f1294d5622cf",
-        "fromTable": "Cal_AD_Premium",
-        "fromColumn": "ID",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
-      },
-      {
-        "name": "5b87b4ab-a66a-47ce-a815-5b0ffb2d19a6",
-        "fromTable": "Cal_AD_Agent_Status",
-        "fromColumn": "ID",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
-      },
-      {
-        "name": "f7be7e11-32d6-4477-aefb-9e3dd1d6cb04",
-        "fromTable": "Cal_AD_Daily_Policy",
-        "fromColumn": "ID",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
       },
       {
         "name": "4a5261f5-3bf1-4730-b548-8b806b4bd423",
@@ -5694,27 +5801,6 @@
         "toTable": "DimAD",
         "toColumn": "AD_Code",
         "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "c21407a5-595f-455d-a78b-a69df874f422",
-        "fromTable": "Cal_AD_K2",
-        "fromColumn": "KeyADTime",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
-      },
-      {
-        "name": "9486446d-7485-4690-92ea-457129547f6c",
-        "fromTable": "Cal_AD_Pending",
-        "fromColumn": "ID",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
-      },
-      {
-        "name": "9835b142-e067-40ea-8fb4-30e8f542a22c",
-        "fromTable": "FactCSSubmission",
-        "fromColumn": "ID",
-        "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
       },
       {
         "name": "3761a6cf-bc8b-4bc0-be25-1d86d5425988",
@@ -5731,11 +5817,53 @@
         "toColumn": "Agent_Number"
       },
       {
-        "name": "c0bf6c69-7c3b-4ca3-80f5-7c07f7699e98",
+        "name": "7e38549c-c157-4326-8861-9d658a9ca937",
         "fromTable": "Cal_Active_Agent_by_Month",
         "fromColumn": "ID",
         "toTable": "FactADHistory",
-        "toColumn": "KeyADTime"
+        "toColumn": "ID"
+      },
+      {
+        "name": "2417c046-7db3-469d-8746-50b7849318a1",
+        "fromTable": "Cal_AD_Pending",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
+      },
+      {
+        "name": "cea8760c-6fd8-4a94-aa01-1f323fccedd6",
+        "fromTable": "Cal_AD_Daily_Policy",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
+      },
+      {
+        "name": "ce3f9f08-ac67-49ca-b17b-a4055b442b9a",
+        "fromTable": "Cal_AD_K2",
+        "fromColumn": "KeyADTime",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
+      },
+      {
+        "name": "bf3a2caf-7da4-465b-b49a-e4dff62e12d5",
+        "fromTable": "FactCSSubmission",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
+      },
+      {
+        "name": "51699bb7-b83f-4a8e-bdc1-e40b3914e431",
+        "fromTable": "Cal_AD_Premium",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
+      },
+      {
+        "name": "54e03eb9-06df-4b6e-9752-6992d8d69ac1",
+        "fromTable": "Cal_AD_Agent_Status",
+        "fromColumn": "ID",
+        "toTable": "FactADHistory",
+        "toColumn": "ID"
       }
     ],
     "roles": [
@@ -5958,6 +6086,14 @@
           {
             "memberName": "PHUHUNGLIFE\\vagy0261",
             "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3386"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0788",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5972"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0785",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5966"
           }
         ],
         "tablePermissions": [
@@ -6012,6 +6148,730 @@
           {
             "name": "DimADSecurity",
             "filterExpression": "FALSE()"
+          }
+        ]
+      },
+      {
+        "name": "ZDSZD",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0307",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2331"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0408",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4812"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0558",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2574"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0629",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6172"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0736",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6368"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0396",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4792"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0400",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4797"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0556",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2572"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0643",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6208"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0516",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5014"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0625",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6161"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0487",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4963"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0411",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4817"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0752",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3073"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0503",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4995"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0508",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5000"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0514",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5012"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0518",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5016"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0678",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6281"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0648",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6228"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0535",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2539"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0700",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6322"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0620",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6146"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0619",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6145"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0654",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6234"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0771",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5945"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0772",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5946"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0171",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3067"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0366",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4657"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0380",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4743"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0462",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4924"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0522",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5035"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0776",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5953"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0703",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6326"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0704",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6327"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0705",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6328"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0760",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5925"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0769",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5940"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0562",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2587"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0564",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2589"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0670",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6265"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0586",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5127"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0579",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5109"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0611",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6129"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0753",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5910"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0724",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5841"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0612",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6130"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0467",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4938"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0714",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6351"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0713",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6350"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0710",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6347"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0741",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5881"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0717",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5820"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0646",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6224"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0667",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6262"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0212",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3206"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0327",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3540"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0662",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6253"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0555",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2571"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0202",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3130"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0324",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3517"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0290",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2247"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0419",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4828"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0464",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4935"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0600",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6113"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0657",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6239"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0698",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6320"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0750",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5900"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0513",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5011"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0554",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2570"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0734",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5859"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0483",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4959"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0548",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2563"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0739",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5870"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0313",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3488"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0463",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4934"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0529",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5045"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0299",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2282"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0492",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4970"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0510",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5003"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0563",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2588"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0744",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5886"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0757",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5916"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0759",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5923"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0762",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5928"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0774",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5950"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0445",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4873"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0370",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4672"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0490",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4966"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0496",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4978"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0630",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6176"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0690",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6299"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0528",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5040"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0661",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6252"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0737",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6369"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0486",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4962"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0471",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4943"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0708",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6345"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0699",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6321"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0688",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6296"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0403",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4805"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0265",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3394"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0481",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4956"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0437",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4865"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0349",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2440"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0389",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4783"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0431",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4857"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0631",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6180"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0653",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6233"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0475",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4948"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0766",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5937"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0293",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2263"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0537",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2541"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0728",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5846"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0634",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6192"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0628",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6171"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0723",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5834"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0658",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6248"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0681",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6286"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0738",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5869"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0675",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6277"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0676",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6279"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0711",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6348"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0765",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5936"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0274",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2154"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0491",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4967"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0587",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5128"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0610",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6128"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0644",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6209"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0729",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5851"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0436",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4864"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0553",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2569"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0669",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6264"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0697",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6319"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0720",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5831"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0398",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4794"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0691",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6300"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0706",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6336"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0502",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4994"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0756",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5915"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0777",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5954"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0373",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4698"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0768",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5939"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0451",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4890"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0456",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4911"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0696",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6318"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0505",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4997"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0506",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4998"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0507",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4999"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0326",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-3523"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0468",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4939"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0642",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6207"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0775",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5952"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0692",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6303"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0570",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2595"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0650",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6230"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0748",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5897"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0781",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5962"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0573",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-2598"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0780",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5957"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0779",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5956"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0665",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6259"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0684",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6289"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0686",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6293"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0731",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5853"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0718",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5828"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0685",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6292"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0637",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-6195"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0783",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5960"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0787",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5971"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0789",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5973"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0791",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5975"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0430",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4854"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0764",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5935"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0469",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-4941"
+          },
+          {
+            "memberName": "PHUHUNGLIFE\\vagy0778",
+            "memberId": "S-1-5-21-4168232644-2608435895-2654246334-5955"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "DimADSecurity",
+            "filterExpression": "FALSE()"
+          },
+          {
+            "name": "DimAD",
+            "filterExpression": "PATHCONTAINS(DimAD[Structure],LOOKUPVALUE(DimADSecurity[AD_Code], DimADSecurity[ADUsername],USERNAME()))"
+          },
+          {
+            "name": "FactADHistory",
+            "filterExpression": "PATHCONTAINS(FactADHistory[structure],LOOKUPVALUE(DimADSecurity[AD_Code], DimADSecurity[ADUsername],USERNAME()))"
           }
         ]
       }

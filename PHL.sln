@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "DP", "DP\DP.smproj", "{009B319E-82B2-4C54-80E5-82189D393AD7}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9891D6BB-F15F-44A9-A7C7-2EFD17866F5D} = {9891D6BB-F15F-44A9-A7C7-2EFD17866F5D}
-	EndProjectSection
 EndProject
 Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "DP Submission", "CS Premium\DP Submission.smproj", "{8EAF52E1-0622-44ED-9ECC-D1ECC9046C5D}"
 EndProject
