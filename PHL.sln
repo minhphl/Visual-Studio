@@ -9,6 +9,8 @@ Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "DP Submission", "CS Premium
 EndProject
 Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "DP_Development", "DP2\DP_Development.smproj", "{9891D6BB-F15F-44A9-A7C7-2EFD17866F5D}"
 EndProject
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "DP3", "DP3\DP\DP3.smproj", "{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,22 @@ Global
 		{9891D6BB-F15F-44A9-A7C7-2EFD17866F5D}.Release|x86.ActiveCfg = Development|x86
 		{9891D6BB-F15F-44A9-A7C7-2EFD17866F5D}.Release|x86.Build.0 = Development|x86
 		{9891D6BB-F15F-44A9-A7C7-2EFD17866F5D}.Release|x86.Deploy.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|Any CPU.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|Any CPU.Build.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|Any CPU.Deploy.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|x86.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|x86.Build.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Debug|x86.Deploy.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Development|Any CPU.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Development|x86.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Development|x86.Build.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Development|x86.Deploy.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|Any CPU.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|Any CPU.Build.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|Any CPU.Deploy.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|x86.ActiveCfg = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|x86.Build.0 = Development|x86
+		{6EE5E4B2-ADC3-45FC-BE56-5DD7CA12C92B}.Release|x86.Deploy.0 = Development|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2234,6 +2234,20 @@
             "name": "DELETED_DATE",
             "dataType": "dateTime",
             "sourceColumn": "DELETED_DATE"
+          },
+          {
+            "type": "calculated",
+            "name": "Cash - Non Cash",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(DimTransactionCS[PAYMENT_METHOD] = \"Cash\", \"Cash\", \"Non-cash\")"
+          },
+          {
+            "type": "calculated",
+            "name": "Remote Selling",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(DimTransactionCS[PAYMENT_METHOD] = \"Remote selling\", \"Remote selling\", \"Other\")"
           }
         ],
         "partitions": [
@@ -4411,6 +4425,11 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "LOOKUPVALUE(DimOffice[Office_Name],DimOffice[Office_Code],DimAgent[Area_Name])"
+          },
+          {
+            "name": "SFC",
+            "dataType": "string",
+            "sourceColumn": "SFC"
           }
         ],
         "partitions": [
@@ -4419,7 +4438,7 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [DPO].[Main_AGENT_INFO_DA].[Area_Name],[DPO].[Main_AGENT_INFO_DA].[Agent_Number],[DPO].[Main_AGENT_INFO_DA].[Agent_Name],[DPO].[Main_AGENT_INFO_DA].[Gender],[DPO].[Main_AGENT_INFO_DA].[Grade],[DPO].[Main_AGENT_INFO_DA].[Agent_Status],[DPO].[Main_AGENT_INFO_DA].[Date_Appointed] FROM [DPO].[Main_AGENT_INFO_DA] ",
+              "query": " SELECT [DPO].[Main_AGENT_INFO_DA].[Area_Name],[DPO].[Main_AGENT_INFO_DA].[Agent_Number],[DPO].[Main_AGENT_INFO_DA].[Agent_Name],[DPO].[Main_AGENT_INFO_DA].[Gender],[DPO].[Main_AGENT_INFO_DA].[Grade],[DPO].[Main_AGENT_INFO_DA].[Agent_Status],[DPO].[Main_AGENT_INFO_DA].[Date_Appointed],[DPO].[Main_AGENT_INFO_DA].[SFC] FROM [DPO].[Main_AGENT_INFO_DA] ",
               "dataSource": "SqlServer 10.9.2.70product PowerBI"
             },
             "annotations": [
@@ -5901,7 +5920,7 @@
                   "        <string>SFC</string>",
                   "      </key>",
                   "      <value>",
-                  "        <boolean>false</boolean>",
+                  "        <boolean>true</boolean>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -5934,7 +5953,7 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [DPO].[Main_AGENT_INFO_DA].[Area_Name],[DPO].[Main_AGENT_INFO_DA].[Agent_Number],[DPO].[Main_AGENT_INFO_DA].[Agent_Name],[DPO].[Main_AGENT_INFO_DA].[Gender],[DPO].[Main_AGENT_INFO_DA].[Grade],[DPO].[Main_AGENT_INFO_DA].[Agent_Status],[DPO].[Main_AGENT_INFO_DA].[Date_Appointed] FROM [DPO].[Main_AGENT_INFO_DA] "
+            "value": " SELECT [DPO].[Main_AGENT_INFO_DA].[Area_Name],[DPO].[Main_AGENT_INFO_DA].[Agent_Number],[DPO].[Main_AGENT_INFO_DA].[Agent_Name],[DPO].[Main_AGENT_INFO_DA].[Gender],[DPO].[Main_AGENT_INFO_DA].[Grade],[DPO].[Main_AGENT_INFO_DA].[Agent_Status],[DPO].[Main_AGENT_INFO_DA].[Date_Appointed],[DPO].[Main_AGENT_INFO_DA].[SFC] FROM [DPO].[Main_AGENT_INFO_DA] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -7422,7 +7441,7 @@
               "        <string>SFC</string>",
               "      </key>",
               "      <value>",
-              "        <boolean>false</boolean>",
+              "        <boolean>true</boolean>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -7496,14 +7515,6 @@
     ],
     "relationships": [
       {
-        "name": "42f6e0ed-95e7-4b71-ab68-bad968b54047",
-        "fromTable": "DimTransactionCS",
-        "fromColumn": "AGENT_CODE",
-        "toTable": "DimAgent",
-        "toColumn": "Agent_Number",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "810bb7a3-cafe-4023-97d2-7dea9bcfa2e5",
         "fromTable": "AD",
         "fromColumn": "Territory_Code",
@@ -7527,12 +7538,19 @@
         "crossFilteringBehavior": "bothDirections"
       },
       {
-        "name": "94bddf50-2638-4201-8ad8-64275f195200",
+        "name": "cb02851b-dabf-41bf-aa24-8272b21e3b5f",
         "fromTable": "DimTransactionCS",
         "fromColumn": "Office_AD",
         "toTable": "DimOffice",
-        "toColumn": "Office_Code",
-        "isActive": false
+        "toColumn": "Office_Code"
+      },
+      {
+        "name": "f72dd691-2813-4a82-b355-560f0e6385a3",
+        "fromTable": "DimTransactionCS",
+        "fromColumn": "AGENT_CODE",
+        "toTable": "DimAgent",
+        "toColumn": "Agent_Number",
+        "crossFilteringBehavior": "bothDirections"
       }
     ],
     "roles": [
